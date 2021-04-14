@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<class id="VoodooI2CSensorHubEnabler" name="VoodooI2CSensorHubEnabler" interface="true" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <base access="public">
+    <type name="IOService" />
+  </base>
+  <variable id="VoodooI2CSensorHubEnabler::gMetaClass" name="gMetaClass">
+    <type name="MetaClass" ref="VoodooI2CSensorHubEnabler::MetaClass#VoodooI2CSensorHubEnabler::MetaClass" />
+  </variable>
+  <variable id="VoodooI2CSensorHubEnabler::metaClass" name="metaClass">
+    <type name="OSMetaClass" qualifier=" const const *" />
+  </variable>
+  <class ref="VoodooI2CSensorHubEnabler::MetaClass#VoodooI2CSensorHubEnabler::MetaClass" name="MetaClass" />
+  <constructor id="VoodooI2CSensorHubEnabler::VoodooI2CSensorHubEnabler" name="VoodooI2CSensorHubEnabler" abstract="yes" />
+  <method id="VoodooI2CSensorHubEnabler::getMetaClass" name="getMetaClass" virtual="yes" abstract="yes">
+    <return>
+      <type name="OSMetaClass" qualifier=" const *" />
+    </return>
+  </method>
+  <method id="VoodooI2CSensorHubEnabler::start" name="start" virtual="yes" abstract="yes">
+    <return>
+      <type name="bool" builtin="yes" />
+    </return>
+    <argument name="provider" id="VoodooI2CSensorHubEnabler::start::provider">
+      <type name="IOService" qualifier="*" />
+    </argument>
+  </method>
+  <constructor id="VoodooI2CSensorHubEnabler::VoodooI2CSensorHubEnabler" name="VoodooI2CSensorHubEnabler" access="protected" abstract="yes">
+    <argument name="" id="VoodooI2CSensorHubEnabler::VoodooI2CSensorHubEnabler::">
+      <type name="OSMetaClass" qualifier=" const *" />
+    </argument>
+  </constructor>
+  <destructor id="VoodooI2CSensorHubEnabler::~VoodooI2CSensorHubEnabler" name="~VoodooI2CSensorHubEnabler" access="protected" virtual="yes" abstract="yes" />
+</class>

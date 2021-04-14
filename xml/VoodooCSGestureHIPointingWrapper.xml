@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<class id="VoodooCSGestureHIPointingWrapper" name="VoodooCSGestureHIPointingWrapper" interface="true" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <base access="public">
+    <type name="IOHIPointing" />
+  </base>
+  <variable id="VoodooCSGestureHIPointingWrapper::gMetaClass" name="gMetaClass">
+    <type name="MetaClass" ref="VoodooCSGestureHIPointingWrapper::MetaClass#VoodooCSGestureHIPointingWrapper::MetaClass" />
+  </variable>
+  <variable id="VoodooCSGestureHIPointingWrapper::metaClass" name="metaClass">
+    <type name="OSMetaClass" qualifier=" const const *" />
+  </variable>
+  <class ref="VoodooCSGestureHIPointingWrapper::MetaClass#VoodooCSGestureHIPointingWrapper::MetaClass" name="MetaClass" />
+  <field id="VoodooCSGestureHIPointingWrapper::gesturerec" name="gesturerec">
+    <type name="VoodooI2CCSGestureEngine" qualifier="*" ref="VoodooI2CCSGestureEngine#VoodooI2CCSGestureEngine" />
+  </field>
+  <constructor id="VoodooCSGestureHIPointingWrapper::VoodooCSGestureHIPointingWrapper" name="VoodooCSGestureHIPointingWrapper" abstract="yes" />
+  <method id="VoodooCSGestureHIPointingWrapper::deviceType" name="deviceType" virtual="yes" abstract="yes">
+    <return>
+      <type name="UInt32" />
+    </return>
+  </method>
+  <method id="VoodooCSGestureHIPointingWrapper::getMetaClass" name="getMetaClass" virtual="yes" abstract="yes">
+    <return>
+      <type name="OSMetaClass" qualifier=" const *" />
+    </return>
+  </method>
+  <method id="VoodooCSGestureHIPointingWrapper::init" name="init" virtual="yes" abstract="yes">
+    <return>
+      <type name="bool" builtin="yes" />
+    </return>
+  </method>
+  <method id="VoodooCSGestureHIPointingWrapper::interfaceID" name="interfaceID" virtual="yes" abstract="yes">
+    <return>
+      <type name="UInt32" />
+    </return>
+  </method>
+  <method id="VoodooCSGestureHIPointingWrapper::setParamProperties" name="setParamProperties" virtual="yes" abstract="yes">
+    <return>
+      <type name="IOReturn" />
+    </return>
+    <argument name="dict" id="VoodooCSGestureHIPointingWrapper::setParamProperties::dict">
+      <type name="OSDictionary" qualifier="*" />
+    </argument>
+  </method>
+  <method id="VoodooCSGestureHIPointingWrapper::start" name="start" virtual="yes" abstract="yes">
+    <return>
+      <type name="bool" builtin="yes" />
+    </return>
+    <argument name="provider" id="VoodooCSGestureHIPointingWrapper::start::provider">
+      <type name="IOService" qualifier="*" />
+    </argument>
+  </method>
+  <method id="VoodooCSGestureHIPointingWrapper::stop" name="stop" virtual="yes" abstract="yes">
+    <return>
+      <type name="void" builtin="yes" />
+    </return>
+    <argument name="provider" id="VoodooCSGestureHIPointingWrapper::stop::provider">
+      <type name="IOService" qualifier="*" />
+    </argument>
+  </method>
+  <method id="VoodooCSGestureHIPointingWrapper::updateAbsoluteMouse" name="updateAbsoluteMouse" abstract="yes">
+    <return>
+      <type name="void" builtin="yes" />
+    </return>
+    <argument name="x" id="VoodooCSGestureHIPointingWrapper::updateAbsoluteMouse::x">
+      <type name="SInt16" />
+    </argument>
+    <argument name="y" id="VoodooCSGestureHIPointingWrapper::updateAbsoluteMouse::y">
+      <type name="SInt16" />
+    </argument>
+    <argument name="buttons" id="VoodooCSGestureHIPointingWrapper::updateAbsoluteMouse::buttons">
+      <type name="int" builtin="yes" />
+    </argument>
+  </method>
+  <method id="VoodooCSGestureHIPointingWrapper::updateRelativeMouse" name="updateRelativeMouse" abstract="yes">
+    <return>
+      <type name="void" builtin="yes" />
+    </return>
+    <argument name="dx" id="VoodooCSGestureHIPointingWrapper::updateRelativeMouse::dx">
+      <type name="int" builtin="yes" />
+    </argument>
+    <argument name="dy" id="VoodooCSGestureHIPointingWrapper::updateRelativeMouse::dy">
+      <type name="int" builtin="yes" />
+    </argument>
+    <argument name="buttons" id="VoodooCSGestureHIPointingWrapper::updateRelativeMouse::buttons">
+      <type name="int" builtin="yes" />
+    </argument>
+  </method>
+  <method id="VoodooCSGestureHIPointingWrapper::updateScroll" name="updateScroll" abstract="yes">
+    <return>
+      <type name="void" builtin="yes" />
+    </return>
+    <argument name="dy" id="VoodooCSGestureHIPointingWrapper::updateScroll::dy">
+      <type name="unsigned short" builtin="yes" />
+    </argument>
+    <argument name="dx" id="VoodooCSGestureHIPointingWrapper::updateScroll::dx">
+      <type name="unsigned short" builtin="yes" />
+    </argument>
+    <argument name="dz" id="VoodooCSGestureHIPointingWrapper::updateScroll::dz">
+      <type name="unsigned short" builtin="yes" />
+    </argument>
+  </method>
+  <constructor id="VoodooCSGestureHIPointingWrapper::VoodooCSGestureHIPointingWrapper" name="VoodooCSGestureHIPointingWrapper" access="protected" abstract="yes">
+    <argument name="" id="VoodooCSGestureHIPointingWrapper::VoodooCSGestureHIPointingWrapper::">
+      <type name="OSMetaClass" qualifier=" const *" />
+    </argument>
+  </constructor>
+  <destructor id="VoodooCSGestureHIPointingWrapper::~VoodooCSGestureHIPointingWrapper" name="~VoodooCSGestureHIPointingWrapper" access="protected" virtual="yes" abstract="yes" />
+  <method id="VoodooCSGestureHIPointingWrapper::buttonCount" name="buttonCount" access="protected" virtual="yes" abstract="yes">
+    <return>
+      <type name="IOItemCount" />
+    </return>
+  </method>
+  <method id="VoodooCSGestureHIPointingWrapper::resolution" name="resolution" access="protected" virtual="yes" abstract="yes">
+    <return>
+      <type name="IOFixed" />
+    </return>
+  </method>
+</class>

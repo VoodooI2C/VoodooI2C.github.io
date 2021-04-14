@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<class id="TimeTrackedValue" name="TimeTrackedValue" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Tracks a &amp;lt;UInt16&amp;gt; value with the current and last value being accessible with their respective timestamps</brief>
+  <doc />
+  <field id="TimeTrackedValue::current" name="current">
+    <type name="ValueWithTime" ref="ValueWithTime#ValueWithTime" />
+  </field>
+  <field id="TimeTrackedValue::last" name="last">
+    <type name="ValueWithTime" ref="ValueWithTime#ValueWithTime" />
+  </field>
+  <conversionfunction id="TimeTrackedValue::operator bool" name="operator bool">
+    <return>
+      <type name="bool" builtin="yes" />
+    </return>
+  </conversionfunction>
+  <method id="TimeTrackedValue::update" name="update">
+    <brief> Updates a timetracked value</brief>
+    <doc />
+    <return>
+      <type name="void" builtin="yes" />
+    </return>
+    <argument name="value" id="TimeTrackedValue::update::value">
+      <doc>The new value to be set</doc>
+      <type name="UInt16" />
+    </argument>
+    <argument name="timestamp" id="TimeTrackedValue::update::timestamp">
+      <doc>The timestamp of the new value</doc>
+      <type name="AbsoluteTime" />
+    </argument>
+  </method>
+  <method id="TimeTrackedValue::value" name="value">
+    <brief>Returns the current value</brief>
+    <doc />
+    <return>
+      <type name="UInt16" />
+    </return>
+  </method>
+</class>

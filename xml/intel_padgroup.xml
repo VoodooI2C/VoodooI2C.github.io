@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<struct id="intel_padgroup" name="intel_padgroup" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>*</brief>
+  <doc>struct intel_padgroup - Hardware pad group information
+</doc>
+  <field id="intel_padgroup::reg_num" name="reg_num">
+    <type name="UInt32" />
+  </field>
+  <field id="intel_padgroup::base" name="base">
+    <type name="UInt32" />
+  </field>
+  <field id="intel_padgroup::size" name="size">
+    <type name="UInt32" />
+  </field>
+  <field id="intel_padgroup::gpio_base" name="gpio_base">
+    <type name="SInt32" />
+  </field>
+  <field id="intel_padgroup::padown_num" name="padown_num">
+    <type name="UInt32" />
+  </field>
+</struct>

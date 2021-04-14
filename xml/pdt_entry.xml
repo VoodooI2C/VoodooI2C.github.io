@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<struct id="pdt_entry" name="pdt_entry" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <field id="pdt_entry::query_base_addr" name="query_base_addr">
+    <type name="uint8_t" />
+  </field>
+  <field id="pdt_entry::command_base_addr" name="command_base_addr">
+    <type name="uint8_t" />
+  </field>
+  <field id="pdt_entry::control_base_addr" name="control_base_addr">
+    <type name="uint8_t" />
+  </field>
+  <field id="pdt_entry::data_base_addr" name="data_base_addr">
+    <type name="uint8_t" />
+  </field>
+  <field id="pdt_entry::interrupt_source_count" name="interrupt_source_count">
+    <type name="uint8_t" />
+  </field>
+  <field id="pdt_entry::bits3and4" name="bits3and4">
+    <type name="uint8_t" />
+  </field>
+  <field id="pdt_entry::function_version" name="function_version">
+    <type name="uint8_t" />
+  </field>
+  <field id="pdt_entry::bit7" name="bit7">
+    <type name="uint8_t" />
+  </field>
+  <field id="pdt_entry::function_number" name="function_number">
+    <type name="uint8_t" />
+  </field>
+</struct>

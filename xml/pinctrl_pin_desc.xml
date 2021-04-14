@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<struct id="pinctrl_pin_desc" name="pinctrl_pin_desc" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <field id="pinctrl_pin_desc::number" name="number">
+    <type name="unsigned int" builtin="yes" />
+  </field>
+  <field id="pinctrl_pin_desc::name" name="name">
+    <type name="char" qualifier="*" builtin="yes" />
+  </field>
+  <field id="pinctrl_pin_desc::drv_data" name="drv_data">
+    <type name="void" qualifier="*" builtin="yes" />
+  </field>
+</struct>

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<struct id="intel_function" name="intel_function" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>*</brief>
+  <doc>struct intel_function - Description about a function
+</doc>
+  <field id="intel_function::name" name="name">
+    <type name="char" qualifier="*" builtin="yes" />
+  </field>
+  <field id="intel_function::groups" name="groups">
+    <type name="char" qualifier=" const **" builtin="yes" />
+  </field>
+  <field id="intel_function::ngroups" name="ngroups">
+    <type name="size_t" />
+  </field>
+</struct>

@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<class id="VoodooI2CAtmelMXTTouchDriver" name="VoodooI2CAtmelMXTTouchDriver" interface="true" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <base access="public">
+    <type name="IOService" />
+  </base>
+  <variable id="VoodooI2CAtmelMXTTouchDriver::gMetaClass" name="gMetaClass">
+    <type name="MetaClass" ref="VoodooI2CAtmelMXTTouchDriver::MetaClass#VoodooI2CAtmelMXTTouchDriver::MetaClass" />
+  </variable>
+  <variable id="VoodooI2CAtmelMXTTouchDriver::metaClass" name="metaClass">
+    <type name="OSMetaClass" qualifier=" const const *" />
+  </variable>
+  <class ref="VoodooI2CAtmelMXTTouchDriver::MetaClass#VoodooI2CAtmelMXTTouchDriver::MetaClass" name="MetaClass" />
+  <constructor id="VoodooI2CAtmelMXTTouchDriver::VoodooI2CAtmelMXTTouchDriver" name="VoodooI2CAtmelMXTTouchDriver" abstract="yes" />
+  <method id="VoodooI2CAtmelMXTTouchDriver::free" name="free" virtual="yes" abstract="yes">
+    <brief> Frees any allocated resources, called implicitly by the kernel</brief>
+    <doc>as the last stage of the driver being unloaded
+
+</doc>
+    <return>
+      <type name="void" builtin="yes" />
+    </return>
+  </method>
+  <method id="VoodooI2CAtmelMXTTouchDriver::getMetaClass" name="getMetaClass" virtual="yes" abstract="yes">
+    <return>
+      <type name="OSMetaClass" qualifier=" const *" />
+    </return>
+  </method>
+  <method id="VoodooI2CAtmelMXTTouchDriver::init" name="init" virtual="yes" abstract="yes">
+    <brief> Initialises the VoodooI2CAtmelMXTTouchDriver object/instance (intended as IOKit driver ctor)</brief>
+    <doc />
+    <return>
+      <doc>true if properly initialised</doc>
+      <type name="bool" builtin="yes" />
+    </return>
+    <argument name="properties" id="VoodooI2CAtmelMXTTouchDriver::init::properties">
+      <type name="OSDictionary" qualifier="*" />
+    </argument>
+  </method>
+  <method id="VoodooI2CAtmelMXTTouchDriver::probe" name="probe" virtual="yes" abstract="yes">
+    <brief> Checks if an Atmel device exists on the current system</brief>
+    <doc />
+    <return>
+      <doc>returns an instance of the current VoodooI2CAtmelMXTTouchDriver if there is a matched Atmel device, NULL otherwise</doc>
+      <type name="VoodooI2CAtmelMXTTouchDriver" qualifier="*" ref="VoodooI2CAtmelMXTTouchDriver#VoodooI2CAtmelMXTTouchDriver" />
+    </return>
+    <argument name="provider" id="VoodooI2CAtmelMXTTouchDriver::probe::provider">
+      <type name="IOService" qualifier="*" />
+    </argument>
+    <argument name="score" id="VoodooI2CAtmelMXTTouchDriver::probe::score">
+      <type name="SInt32" qualifier="*" />
+    </argument>
+  </method>
+  <method id="VoodooI2CAtmelMXTTouchDriver::start" name="start" virtual="yes" abstract="yes">
+    <brief> Starts the driver and initialises the Atmel device</brief>
+    <doc />
+    <return>
+      <doc>returns true if the driver has started</doc>
+      <type name="bool" builtin="yes" />
+    </return>
+    <argument name="provider" id="VoodooI2CAtmelMXTTouchDriver::start::provider">
+      <type name="IOService" qualifier="*" />
+    </argument>
+  </method>
+  <method id="VoodooI2CAtmelMXTTouchDriver::stop" name="stop" virtual="yes" abstract="yes">
+    <brief> Stops the driver and frees any allocated resource</brief>
+    <doc />
+    <return>
+      <type name="void" builtin="yes" />
+    </return>
+    <argument name="device" id="VoodooI2CAtmelMXTTouchDriver::stop::device">
+      <type name="IOService" qualifier="*" />
+    </argument>
+  </method>
+  <field id="VoodooI2CAtmelMXTTouchDriver::api" name="api" access="protected">
+    <type name="VoodooI2CDeviceNub" qualifier="*" ref="VoodooI2CDeviceNub#VoodooI2CDeviceNub" />
+  </field>
+  <field id="VoodooI2CAtmelMXTTouchDriver::acpi_device" name="acpi_device" access="protected">
+    <type name="IOACPIPlatformDevice" qualifier="*" />
+  </field>
+  <constructor id="VoodooI2CAtmelMXTTouchDriver::VoodooI2CAtmelMXTTouchDriver" name="VoodooI2CAtmelMXTTouchDriver" access="protected" abstract="yes">
+    <argument name="" id="VoodooI2CAtmelMXTTouchDriver::VoodooI2CAtmelMXTTouchDriver::">
+      <type name="OSMetaClass" qualifier=" const *" />
+    </argument>
+  </constructor>
+  <destructor id="VoodooI2CAtmelMXTTouchDriver::~VoodooI2CAtmelMXTTouchDriver" name="~VoodooI2CAtmelMXTTouchDriver" access="protected" virtual="yes" abstract="yes" />
+  <method id="VoodooI2CAtmelMXTTouchDriver::setPowerState" name="setPowerState" access="protected" virtual="yes" abstract="yes">
+    <return>
+      <type name="IOReturn" />
+    </return>
+    <argument name="longpowerStateOrdinal" id="VoodooI2CAtmelMXTTouchDriver::setPowerState::longpowerStateOrdinal">
+      <type name="unsigned long" builtin="yes" />
+    </argument>
+    <argument name="whatDevice" id="VoodooI2CAtmelMXTTouchDriver::setPowerState::whatDevice">
+      <type name="IOService" qualifier="*" />
+    </argument>
+  </method>
+</class>

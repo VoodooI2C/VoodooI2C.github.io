@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<class id="VoodooI2CServices" name="VoodooI2CServices" interface="true" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Provides various services to all VoodooI2C related classes.</brief>
+  <doc />
+  <base access="public">
+    <type name="IOService" />
+  </base>
+  <variable id="VoodooI2CServices::gMetaClass" name="gMetaClass">
+    <type name="MetaClass" ref="VoodooI2CServices::MetaClass#VoodooI2CServices::MetaClass" />
+  </variable>
+  <variable id="VoodooI2CServices::gVoodooI2CPlane" name="gVoodooI2CPlane">
+    <type name="IORegistryPlane" qualifier=" const *" />
+  </variable>
+  <variable id="VoodooI2CServices::metaClass" name="metaClass">
+    <type name="OSMetaClass" qualifier=" const const *" />
+  </variable>
+  <class ref="VoodooI2CServices::MetaClass#VoodooI2CServices::MetaClass" name="MetaClass" />
+  <constructor id="VoodooI2CServices::VoodooI2CServices" name="VoodooI2CServices" abstract="yes" />
+  <method id="VoodooI2CServices::getMetaClass" name="getMetaClass" virtual="yes" abstract="yes">
+    <return>
+      <type name="OSMetaClass" qualifier=" const *" />
+    </return>
+  </method>
+  <method id="VoodooI2CServices::start" name="start" virtual="yes" abstract="yes">
+    <brief> Starts the services kext</brief>
+    <doc>This function is responsible for initialising the VoodooI2C plane and the logger.
+</doc>
+    <return>
+      <doc>*true* on successful start, *false* otherwise</doc>
+      <type name="bool" builtin="yes" />
+    </return>
+    <argument name="provider" id="VoodooI2CServices::start::provider">
+      <doc>IOResources</doc>
+      <type name="IOService" qualifier="*" />
+    </argument>
+  </method>
+  <method id="VoodooI2CServices::stop" name="stop" virtual="yes" abstract="yes">
+    <brief> Stops the services kext</brief>
+    <doc />
+    <return>
+      <type name="void" builtin="yes" />
+    </return>
+    <argument name="provider" id="VoodooI2CServices::stop::provider">
+      <doc>IOResources</doc>
+      <type name="IOService" qualifier="*" />
+    </argument>
+  </method>
+  <constructor id="VoodooI2CServices::VoodooI2CServices" name="VoodooI2CServices" access="protected" abstract="yes">
+    <argument name="" id="VoodooI2CServices::VoodooI2CServices::">
+      <type name="OSMetaClass" qualifier=" const *" />
+    </argument>
+  </constructor>
+  <destructor id="VoodooI2CServices::~VoodooI2CServices" name="~VoodooI2CServices" access="protected" virtual="yes" abstract="yes" />
+</class>

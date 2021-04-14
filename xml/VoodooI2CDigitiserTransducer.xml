@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<class id="VoodooI2CDigitiserTransducer" name="VoodooI2CDigitiserTransducer" interface="true" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Represents a transducer of a physical digitiser device</brief>
+  <doc />
+  <base access="public">
+    <type name="OSObject" />
+  </base>
+  <subclass access="public" ref="VoodooI2CDigitiserStylus#VoodooI2CDigitiserStylus" name="VoodooI2CDigitiserStylus">
+    <brief>Represents a stylus-type transducer</brief>
+  </subclass>
+  <variable id="VoodooI2CDigitiserTransducer::gMetaClass" name="gMetaClass">
+    <type name="MetaClass" ref="VoodooI2CDigitiserTransducer::MetaClass#VoodooI2CDigitiserTransducer::MetaClass" />
+  </variable>
+  <variable id="VoodooI2CDigitiserTransducer::metaClass" name="metaClass">
+    <type name="OSMetaClass" qualifier=" const const *" />
+  </variable>
+  <class ref="VoodooI2CDigitiserTransducer::MetaClass#VoodooI2CDigitiserTransducer::MetaClass" name="MetaClass" />
+  <field id="VoodooI2CDigitiserTransducer::physical_button" name="physical_button">
+    <type name="DigitiserTransducerButtonState" ref="index#DigitiserTransducerButtonState" />
+  </field>
+  <field id="VoodooI2CDigitiserTransducer::coordinates" name="coordinates">
+    <type name="DigitiserTransducerCoordinates" ref="DigitiserTransducerCoordinates#DigitiserTransducerCoordinates" />
+  </field>
+  <field id="VoodooI2CDigitiserTransducer::last_coordinates" name="last_coordinates">
+    <type name="DigitiserTransducerCoordinates" ref="DigitiserTransducerCoordinates#DigitiserTransducerCoordinates" />
+  </field>
+  <field id="VoodooI2CDigitiserTransducer::dimensions" name="dimensions">
+    <type name="DigitiserTransducerDimensions" ref="DigitiserTransducerDimensions#DigitiserTransducerDimensions" />
+  </field>
+  <field id="VoodooI2CDigitiserTransducer::last_dimensions" name="last_dimensions">
+    <type name="DigitiserTransducerDimensions" ref="DigitiserTransducerDimensions#DigitiserTransducerDimensions" />
+  </field>
+  <field id="VoodooI2CDigitiserTransducer::azi_alti_orientation" name="azi_alti_orientation">
+    <type name="DigitiserTransducerAziAltiOrentation" ref="DigitiserTransducerAziAltiOrentation#DigitiserTransducerAziAltiOrentation" />
+  </field>
+  <field id="VoodooI2CDigitiserTransducer::tilt_orientation" name="tilt_orientation">
+    <type name="DigitiserTransducerTiltOrientation" ref="DigitiserTransducerTiltOrientation#DigitiserTransducerTiltOrientation" />
+  </field>
+  <field id="VoodooI2CDigitiserTransducer::tip_switch" name="tip_switch">
+    <type name="DigitiserTransducerButtonState" ref="index#DigitiserTransducerButtonState" />
+  </field>
+  <field id="VoodooI2CDigitiserTransducer::tip_pressure" name="tip_pressure">
+    <type name="TimeTrackedValue" ref="TimeTrackedValue#TimeTrackedValue" />
+  </field>
+  <field id="VoodooI2CDigitiserTransducer::touch_major" name="touch_major">
+    <type name="TimeTrackedValue" ref="TimeTrackedValue#TimeTrackedValue" />
+  </field>
+  <field id="VoodooI2CDigitiserTransducer::touch_minor" name="touch_minor">
+    <type name="TimeTrackedValue" ref="TimeTrackedValue#TimeTrackedValue" />
+  </field>
+  <field id="VoodooI2CDigitiserTransducer::logical_max_x" name="logical_max_x">
+    <type name="SInt32" />
+  </field>
+  <field id="VoodooI2CDigitiserTransducer::logical_max_y" name="logical_max_y">
+    <type name="SInt32" />
+  </field>
+  <field id="VoodooI2CDigitiserTransducer::logical_max_z" name="logical_max_z">
+    <type name="SInt32" />
+  </field>
+  <field id="VoodooI2CDigitiserTransducer::pressure_physical_max" name="pressure_physical_max">
+    <type name="SInt32" />
+  </field>
+  <field id="VoodooI2CDigitiserTransducer::id" name="id">
+    <type name="UInt16" />
+  </field>
+  <field id="VoodooI2CDigitiserTransducer::secondary_id" name="secondary_id">
+    <type name="UInt16" />
+  </field>
+  <field id="VoodooI2CDigitiserTransducer::in_range" name="in_range">
+    <type name="bool" builtin="yes" />
+  </field>
+  <field id="VoodooI2CDigitiserTransducer::is_valid" name="is_valid">
+    <type name="bool" builtin="yes" />
+  </field>
+  <field id="VoodooI2CDigitiserTransducer::type" name="type">
+    <type name="DigitiserTransducerType" ref="index#DigitiserTransducerType" />
+  </field>
+  <field id="VoodooI2CDigitiserTransducer::collection" name="collection">
+    <type name="IOHIDElement" qualifier="*" />
+  </field>
+  <field id="VoodooI2CDigitiserTransducer::event_mask" name="event_mask">
+    <type name="UInt32" />
+  </field>
+  <field id="VoodooI2CDigitiserTransducer::timestamp" name="timestamp">
+    <type name="AbsoluteTime" />
+  </field>
+  <constructor id="VoodooI2CDigitiserTransducer::VoodooI2CDigitiserTransducer" name="VoodooI2CDigitiserTransducer" abstract="yes" />
+  <method id="VoodooI2CDigitiserTransducer::getMetaClass" name="getMetaClass" virtual="yes" abstract="yes">
+    <return>
+      <type name="OSMetaClass" qualifier=" const *" />
+    </return>
+  </method>
+  <method id="VoodooI2CDigitiserTransducer::serialize" name="serialize" abstract="yes">
+    <return>
+      <type name="bool" builtin="yes" />
+    </return>
+    <argument name="serializer" id="VoodooI2CDigitiserTransducer::serialize::serializer">
+      <type name="OSSerialize" qualifier="*" />
+    </argument>
+  </method>
+  <method id="VoodooI2CDigitiserTransducer::transducer" name="transducer" static="yes" abstract="yes">
+    <brief> Instantiates a new transducer</brief>
+    <doc />
+    <return>
+      <doc>A pointer to an instance of <ref ref="VoodooI2CDigitiserTransducer#VoodooI2CDigitiserTransducer::VoodooI2CDigitiserTransducer">VoodooI2CDigitiserTransducer::VoodooI2CDigitiserTransducer</ref> and <ref ref="VoodooI2CDigitiserTransducer#VoodooI2CDigitiserTransducer::VoodooI2CDigitiserTransducer">VoodooI2CDigitiserTransducer::VoodooI2CDigitiserTransducer</ref></doc>
+      <type name="VoodooI2CDigitiserTransducer" qualifier="*" ref="VoodooI2CDigitiserTransducer#VoodooI2CDigitiserTransducer" />
+    </return>
+    <argument name="transducer_type" id="VoodooI2CDigitiserTransducer::transducer::transducer_type">
+      <doc>The type of transducer to be created</doc>
+      <type name="DigitiserTransducerType" ref="index#DigitiserTransducerType" />
+    </argument>
+    <argument name="digitizer_collection" id="VoodooI2CDigitiserTransducer::transducer::digitizer_collection">
+      <doc>The HID element associated to this transducer. Set to *NULL* if not in an HID context</doc>
+      <type name="IOHIDElement" qualifier="*" />
+    </argument>
+  </method>
+  <constructor id="VoodooI2CDigitiserTransducer::VoodooI2CDigitiserTransducer" name="VoodooI2CDigitiserTransducer" access="protected" abstract="yes">
+    <argument name="" id="VoodooI2CDigitiserTransducer::VoodooI2CDigitiserTransducer::">
+      <type name="OSMetaClass" qualifier=" const *" />
+    </argument>
+  </constructor>
+  <destructor id="VoodooI2CDigitiserTransducer::~VoodooI2CDigitiserTransducer" name="~VoodooI2CDigitiserTransducer" access="protected" virtual="yes" abstract="yes" />
+</class>

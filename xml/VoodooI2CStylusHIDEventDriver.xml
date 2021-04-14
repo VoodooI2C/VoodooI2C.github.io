@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<class id="VoodooI2CStylusHIDEventDriver" name="VoodooI2CStylusHIDEventDriver" interface="true" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <base access="public">
+    <type name="VoodooI2CTouchscreenHIDEventDriver" ref="VoodooI2CTouchscreenHIDEventDriver#VoodooI2CTouchscreenHIDEventDriver" />
+    <brief> Implements an HID Event Driver for touchscreen devices as well as stylus input.</brief>
+  </base>
+  <variable id="VoodooI2CStylusHIDEventDriver::gMetaClass" name="gMetaClass">
+    <type name="MetaClass" ref="VoodooI2CStylusHIDEventDriver::MetaClass#VoodooI2CStylusHIDEventDriver::MetaClass" />
+  </variable>
+  <variable id="VoodooI2CStylusHIDEventDriver::metaClass" name="metaClass">
+    <type name="OSMetaClass" qualifier=" const const *" />
+  </variable>
+  <class ref="VoodooI2CStylusHIDEventDriver::MetaClass#VoodooI2CStylusHIDEventDriver::MetaClass" name="MetaClass" />
+  <constructor id="VoodooI2CStylusHIDEventDriver::VoodooI2CStylusHIDEventDriver" name="VoodooI2CStylusHIDEventDriver" abstract="yes" />
+  <method id="VoodooI2CStylusHIDEventDriver::getMetaClass" name="getMetaClass" override="yes" virtual="yes" abstract="yes">
+    <return>
+      <type name="OSMetaClass" qualifier=" const *" />
+    </return>
+    <override name="VoodooI2CTouchscreenHIDEventDriver::getMetaClass" ref="VoodooI2CTouchscreenHIDEventDriver#VoodooI2CTouchscreenHIDEventDriver::getMetaClass" />
+  </method>
+  <method id="VoodooI2CStylusHIDEventDriver::handleInterruptReport" name="handleInterruptReport" override="yes" virtual="yes" abstract="yes">
+    <return>
+      <type name="void" builtin="yes" />
+    </return>
+    <argument name="timestamp" id="VoodooI2CStylusHIDEventDriver::handleInterruptReport::timestamp">
+      <type name="AbsoluteTime" />
+    </argument>
+    <argument name="report" id="VoodooI2CStylusHIDEventDriver::handleInterruptReport::report">
+      <type name="IOMemoryDescriptor" qualifier="*" />
+    </argument>
+    <argument name="report_type" id="VoodooI2CStylusHIDEventDriver::handleInterruptReport::report_type">
+      <type name="IOHIDReportType" />
+    </argument>
+    <argument name="report_id" id="VoodooI2CStylusHIDEventDriver::handleInterruptReport::report_id">
+      <type name="UInt32" />
+    </argument>
+    <override name="VoodooI2CMultitouchHIDEventDriver::handleInterruptReport" ref="VoodooI2CMultitouchHIDEventDriver#VoodooI2CMultitouchHIDEventDriver::handleInterruptReport" />
+  </method>
+  <method id="VoodooI2CStylusHIDEventDriver::init" name="init" virtual="yes" abstract="yes">
+    <return>
+      <type name="bool" builtin="yes" />
+    </return>
+    <argument name="properties" id="VoodooI2CStylusHIDEventDriver::init::properties">
+      <type name="OSDictionary" qualifier="*" />
+    </argument>
+  </method>
+  <constructor id="VoodooI2CStylusHIDEventDriver::VoodooI2CStylusHIDEventDriver" name="VoodooI2CStylusHIDEventDriver" access="protected" abstract="yes">
+    <argument name="" id="VoodooI2CStylusHIDEventDriver::VoodooI2CStylusHIDEventDriver::">
+      <type name="OSMetaClass" qualifier=" const *" />
+    </argument>
+  </constructor>
+  <destructor id="VoodooI2CStylusHIDEventDriver::~VoodooI2CStylusHIDEventDriver" name="~VoodooI2CStylusHIDEventDriver" access="protected" virtual="yes" abstract="yes" />
+</class>

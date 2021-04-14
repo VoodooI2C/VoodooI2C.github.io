@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<class id="VoodooI2CAccelerometerSensor" name="VoodooI2CAccelerometerSensor" interface="true" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <base access="public">
+    <type name="VoodooI2CSensor" ref="VoodooI2CSensor#VoodooI2CSensor" />
+  </base>
+  <variable id="VoodooI2CAccelerometerSensor::gMetaClass" name="gMetaClass">
+    <type name="MetaClass" ref="VoodooI2CAccelerometerSensor::MetaClass#VoodooI2CAccelerometerSensor::MetaClass" />
+  </variable>
+  <variable id="VoodooI2CAccelerometerSensor::metaClass" name="metaClass">
+    <type name="OSMetaClass" qualifier=" const const *" />
+  </variable>
+  <class ref="VoodooI2CAccelerometerSensor::MetaClass#VoodooI2CAccelerometerSensor::MetaClass" name="MetaClass" />
+  <constructor id="VoodooI2CAccelerometerSensor::VoodooI2CAccelerometerSensor" name="VoodooI2CAccelerometerSensor" abstract="yes" />
+  <method id="VoodooI2CAccelerometerSensor::getMetaClass" name="getMetaClass" override="yes" virtual="yes" abstract="yes">
+    <return>
+      <type name="OSMetaClass" qualifier=" const *" />
+    </return>
+    <override name="VoodooI2CSensor::getMetaClass" ref="VoodooI2CSensor#VoodooI2CSensor::getMetaClass" />
+  </method>
+  <method id="VoodooI2CAccelerometerSensor::handleInterruptReport" name="handleInterruptReport" override="yes" virtual="yes" abstract="yes">
+    <return>
+      <type name="void" builtin="yes" />
+    </return>
+    <argument name="timestamp" id="VoodooI2CAccelerometerSensor::handleInterruptReport::timestamp">
+      <type name="AbsoluteTime" />
+    </argument>
+    <argument name="report" id="VoodooI2CAccelerometerSensor::handleInterruptReport::report">
+      <type name="IOMemoryDescriptor" qualifier="*" />
+    </argument>
+    <argument name="report_type" id="VoodooI2CAccelerometerSensor::handleInterruptReport::report_type">
+      <type name="IOHIDReportType" />
+    </argument>
+    <argument name="report_id" id="VoodooI2CAccelerometerSensor::handleInterruptReport::report_id">
+      <type name="UInt32" />
+    </argument>
+    <override name="VoodooI2CSensor::handleInterruptReport" ref="VoodooI2CSensor#VoodooI2CSensor::handleInterruptReport" />
+  </method>
+  <method id="VoodooI2CAccelerometerSensor::rotateDevice" name="rotateDevice" abstract="yes">
+    <return>
+      <type name="void" builtin="yes" />
+    </return>
+    <argument name="rotation_state" id="VoodooI2CAccelerometerSensor::rotateDevice::rotation_state">
+      <type name="IOOptionBits" />
+    </argument>
+  </method>
+  <method id="VoodooI2CAccelerometerSensor::setPowerState" name="setPowerState" override="yes" virtual="yes" abstract="yes">
+    <return>
+      <type name="IOReturn" />
+    </return>
+    <argument name="whichState" id="VoodooI2CAccelerometerSensor::setPowerState::whichState">
+      <type name="unsigned long" builtin="yes" />
+    </argument>
+    <argument name="whatDevice" id="VoodooI2CAccelerometerSensor::setPowerState::whatDevice">
+      <type name="IOService" qualifier="*" />
+    </argument>
+    <override name="VoodooI2CSensor::setPowerState" ref="VoodooI2CSensor#VoodooI2CSensor::setPowerState" />
+  </method>
+  <method id="VoodooI2CAccelerometerSensor::start" name="start" override="yes" virtual="yes" abstract="yes">
+    <return>
+      <type name="bool" builtin="yes" />
+    </return>
+    <argument name="provider" id="VoodooI2CAccelerometerSensor::start::provider">
+      <type name="IOService" qualifier="*" />
+    </argument>
+    <override name="VoodooI2CSensor::start" ref="VoodooI2CSensor#VoodooI2CSensor::start" />
+  </method>
+  <method id="VoodooI2CAccelerometerSensor::withElement" name="withElement" override="yes" static="yes" abstract="yes">
+    <return>
+      <type name="VoodooI2CSensor" qualifier="*" ref="VoodooI2CSensor#VoodooI2CSensor" />
+    </return>
+    <argument name="sensor_element" id="VoodooI2CAccelerometerSensor::withElement::sensor_element">
+      <type name="IOHIDElement" qualifier="*" />
+    </argument>
+    <argument name="event_driver" id="VoodooI2CAccelerometerSensor::withElement::event_driver">
+      <type name="IOService" qualifier="*" />
+    </argument>
+    <override name="VoodooI2CSensor::withElement" ref="VoodooI2CSensor#VoodooI2CSensor::withElement" />
+  </method>
+  <constructor id="VoodooI2CAccelerometerSensor::VoodooI2CAccelerometerSensor" name="VoodooI2CAccelerometerSensor" access="protected" abstract="yes">
+    <argument name="" id="VoodooI2CAccelerometerSensor::VoodooI2CAccelerometerSensor::">
+      <type name="OSMetaClass" qualifier=" const *" />
+    </argument>
+  </constructor>
+  <destructor id="VoodooI2CAccelerometerSensor::~VoodooI2CAccelerometerSensor" name="~VoodooI2CAccelerometerSensor" access="protected" virtual="yes" abstract="yes" />
+</class>

@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<class id="VoodooI2CACPICRSParser" name="VoodooI2CACPICRSParser" interface="true" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <field id="VoodooI2CACPICRSParser::found_i2c" name="found_i2c">
+    <type name="bool" builtin="yes" />
+  </field>
+  <field id="VoodooI2CACPICRSParser::found_gpio_interrupts" name="found_gpio_interrupts">
+    <type name="bool" builtin="yes" />
+  </field>
+  <field id="VoodooI2CACPICRSParser::found_gpio_io" name="found_gpio_io">
+    <type name="bool" builtin="yes" />
+  </field>
+  <field id="VoodooI2CACPICRSParser::i2c_info" name="i2c_info">
+    <type name="i2c_info" ref="i2c_info#i2c_info" />
+  </field>
+  <field id="VoodooI2CACPICRSParser::gpio_interrupts" name="gpio_interrupts">
+    <type name="gpio_int_info" ref="gpio_int_info#gpio_int_info" />
+  </field>
+  <field id="VoodooI2CACPICRSParser::gpio_io" name="gpio_io">
+    <type name="gpio_io_info" ref="gpio_io_info#gpio_io_info" />
+  </field>
+  <constructor id="VoodooI2CACPICRSParser::VoodooI2CACPICRSParser" name="VoodooI2CACPICRSParser" abstract="yes" />
+  <method id="VoodooI2CACPICRSParser::parseACPICRS" name="parseACPICRS" abstract="yes">
+    <return>
+      <type name="void" builtin="yes" />
+    </return>
+    <argument name="crs" id="VoodooI2CACPICRSParser::parseACPICRS::crs">
+      <type name="uint8_t" qualifier=" const *" />
+    </argument>
+    <argument name="offset" id="VoodooI2CACPICRSParser::parseACPICRS::offset">
+      <type name="uint32_t" />
+    </argument>
+    <argument name="sz" id="VoodooI2CACPICRSParser::parseACPICRS::sz">
+      <type name="uint32_t" />
+    </argument>
+  </method>
+</class>

@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<class id="VoodooGPIOSunrisePointLP" name="VoodooGPIOSunrisePointLP" interface="true" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <base access="public">
+    <type name="VoodooGPIO" ref="VoodooGPIO#VoodooGPIO" />
+  </base>
+  <variable id="VoodooGPIOSunrisePointLP::gMetaClass" name="gMetaClass">
+    <type name="MetaClass" ref="VoodooGPIOSunrisePointLP::MetaClass#VoodooGPIOSunrisePointLP::MetaClass" />
+  </variable>
+  <variable id="VoodooGPIOSunrisePointLP::metaClass" name="metaClass">
+    <type name="OSMetaClass" qualifier=" const const *" />
+  </variable>
+  <class ref="VoodooGPIOSunrisePointLP::MetaClass#VoodooGPIOSunrisePointLP::MetaClass" name="MetaClass" />
+  <constructor id="VoodooGPIOSunrisePointLP::VoodooGPIOSunrisePointLP" name="VoodooGPIOSunrisePointLP" abstract="yes" />
+  <method id="VoodooGPIOSunrisePointLP::getMetaClass" name="getMetaClass" override="yes" virtual="yes" abstract="yes">
+    <return>
+      <type name="OSMetaClass" qualifier=" const *" />
+    </return>
+    <override name="VoodooGPIO::getMetaClass" ref="VoodooGPIO#VoodooGPIO::getMetaClass" />
+  </method>
+  <constructor id="VoodooGPIOSunrisePointLP::VoodooGPIOSunrisePointLP" name="VoodooGPIOSunrisePointLP" access="protected" abstract="yes">
+    <argument name="" id="VoodooGPIOSunrisePointLP::VoodooGPIOSunrisePointLP::">
+      <type name="OSMetaClass" qualifier=" const *" />
+    </argument>
+  </constructor>
+  <destructor id="VoodooGPIOSunrisePointLP::~VoodooGPIOSunrisePointLP" name="~VoodooGPIOSunrisePointLP" access="protected" virtual="yes" abstract="yes" />
+  <method id="VoodooGPIOSunrisePointLP::start" name="start" access="protected" override="yes" virtual="yes" abstract="yes">
+    <return>
+      <type name="bool" builtin="yes" />
+    </return>
+    <argument name="provider" id="VoodooGPIOSunrisePointLP::start::provider">
+      <type name="IOService" qualifier="*" />
+    </argument>
+    <override name="VoodooGPIO::start" ref="VoodooGPIO#VoodooGPIO::start" />
+  </method>
+</class>

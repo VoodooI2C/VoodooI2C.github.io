@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<class id="VoodooI2CHIDTransducerWrapper" name="VoodooI2CHIDTransducerWrapper" interface="true" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <base access="public">
+    <type name="OSObject" />
+  </base>
+  <variable id="VoodooI2CHIDTransducerWrapper::gMetaClass" name="gMetaClass">
+    <type name="MetaClass" ref="VoodooI2CHIDTransducerWrapper::MetaClass#VoodooI2CHIDTransducerWrapper::MetaClass" />
+  </variable>
+  <variable id="VoodooI2CHIDTransducerWrapper::metaClass" name="metaClass">
+    <type name="OSMetaClass" qualifier=" const const *" />
+  </variable>
+  <class ref="VoodooI2CHIDTransducerWrapper::MetaClass#VoodooI2CHIDTransducerWrapper::MetaClass" name="MetaClass" />
+  <field id="VoodooI2CHIDTransducerWrapper::transducers" name="transducers">
+    <type name="OSArray" qualifier="*" />
+  </field>
+  <field id="VoodooI2CHIDTransducerWrapper::first_identifier" name="first_identifier">
+    <type name="IOHIDElement" qualifier="*" />
+  </field>
+  <constructor id="VoodooI2CHIDTransducerWrapper::VoodooI2CHIDTransducerWrapper" name="VoodooI2CHIDTransducerWrapper" abstract="yes" />
+  <method id="VoodooI2CHIDTransducerWrapper::free" name="free" virtual="yes" abstract="yes">
+    <return>
+      <type name="void" builtin="yes" />
+    </return>
+  </method>
+  <method id="VoodooI2CHIDTransducerWrapper::getMetaClass" name="getMetaClass" virtual="yes" abstract="yes">
+    <return>
+      <type name="OSMetaClass" qualifier=" const *" />
+    </return>
+  </method>
+  <method id="VoodooI2CHIDTransducerWrapper::init" name="init" virtual="yes" abstract="yes">
+    <return>
+      <type name="bool" builtin="yes" />
+    </return>
+  </method>
+  <method id="VoodooI2CHIDTransducerWrapper::wrapper" name="wrapper" static="yes" abstract="yes">
+    <return>
+      <type name="VoodooI2CHIDTransducerWrapper" qualifier="*" ref="VoodooI2CHIDTransducerWrapper#VoodooI2CHIDTransducerWrapper" />
+    </return>
+  </method>
+  <constructor id="VoodooI2CHIDTransducerWrapper::VoodooI2CHIDTransducerWrapper" name="VoodooI2CHIDTransducerWrapper" access="protected" abstract="yes">
+    <argument name="" id="VoodooI2CHIDTransducerWrapper::VoodooI2CHIDTransducerWrapper::">
+      <type name="OSMetaClass" qualifier=" const *" />
+    </argument>
+  </constructor>
+  <destructor id="VoodooI2CHIDTransducerWrapper::~VoodooI2CHIDTransducerWrapper" name="~VoodooI2CHIDTransducerWrapper" access="protected" virtual="yes" abstract="yes" />
+</class>

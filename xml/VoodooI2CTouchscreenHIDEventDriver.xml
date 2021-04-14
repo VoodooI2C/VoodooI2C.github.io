@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<class id="VoodooI2CTouchscreenHIDEventDriver" name="VoodooI2CTouchscreenHIDEventDriver" interface="true" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief> Implements an HID Event Driver for touchscreen devices as well as stylus input.</brief>
+  <doc />
+  <base access="public">
+    <type name="VoodooI2CMultitouchHIDEventDriver" ref="VoodooI2CMultitouchHIDEventDriver#VoodooI2CMultitouchHIDEventDriver" />
+    <brief> Implements an HID Event Driver for HID devices that expose a digitiser usage page.</brief>
+  </base>
+  <subclass access="public" ref="VoodooI2CStylusHIDEventDriver#VoodooI2CStylusHIDEventDriver" name="VoodooI2CStylusHIDEventDriver" />
+  <variable id="VoodooI2CTouchscreenHIDEventDriver::gMetaClass" name="gMetaClass">
+    <type name="MetaClass" ref="VoodooI2CTouchscreenHIDEventDriver::MetaClass#VoodooI2CTouchscreenHIDEventDriver::MetaClass" />
+  </variable>
+  <variable id="VoodooI2CTouchscreenHIDEventDriver::metaClass" name="metaClass">
+    <type name="OSMetaClass" qualifier=" const const *" />
+  </variable>
+  <class ref="VoodooI2CTouchscreenHIDEventDriver::MetaClass#VoodooI2CTouchscreenHIDEventDriver::MetaClass" name="MetaClass" />
+  <constructor id="VoodooI2CTouchscreenHIDEventDriver::VoodooI2CTouchscreenHIDEventDriver" name="VoodooI2CTouchscreenHIDEventDriver" abstract="yes" />
+  <method id="VoodooI2CTouchscreenHIDEventDriver::forwardReport" name="forwardReport" override="yes" virtual="yes" abstract="yes">
+    <brief> Checks the event contact count and if finger touches &gt;= 2 are detected, the event is immediately dispatched</brief>
+    <doc>to the multitouch engine interface.  The 'else' convention used vs 'elseif' is intentional and results in
+smoother gesture recognition and execution.  If single touch is detected, first the transducer is checked for stylus operation
+and if false, the transducer is checked for finger touch.
+
+</doc>
+    <return>
+      <type name="void" builtin="yes" />
+    </return>
+    <argument name="event" id="VoodooI2CTouchscreenHIDEventDriver::forwardReport::event">
+      <type name="VoodooI2CMultitouchEvent" ref="VoodooI2CMultitouchEvent#VoodooI2CMultitouchEvent" />
+    </argument>
+    <argument name="timestamp" id="VoodooI2CTouchscreenHIDEventDriver::forwardReport::timestamp">
+      <type name="AbsoluteTime" />
+    </argument>
+    <override name="VoodooI2CMultitouchHIDEventDriver::forwardReport" ref="VoodooI2CMultitouchHIDEventDriver#VoodooI2CMultitouchHIDEventDriver::forwardReport" />
+  </method>
+  <method id="VoodooI2CTouchscreenHIDEventDriver::getMetaClass" name="getMetaClass" override="yes" virtual="yes" abstract="yes">
+    <return>
+      <type name="OSMetaClass" qualifier=" const *" />
+    </return>
+    <override name="VoodooI2CMultitouchHIDEventDriver::getMetaClass" ref="VoodooI2CMultitouchHIDEventDriver#VoodooI2CMultitouchHIDEventDriver::getMetaClass" />
+  </method>
+  <method id="VoodooI2CTouchscreenHIDEventDriver::handleStart" name="handleStart" override="yes" virtual="yes" abstract="yes">
+    <brief> Called during the start routine to set up the HID Event Driver</brief>
+    <doc>This function is reponsible for opening a client connection with the &amp;lt;IOHIDInterface&amp;gt; provider and for publishing
+a multitouch interface into the IOService plane.
+
+</doc>
+    <return>
+      <doc>*true* on successful start, *false* otherwise</doc>
+      <type name="bool" builtin="yes" />
+    </return>
+    <argument name="provider" id="VoodooI2CTouchscreenHIDEventDriver::handleStart::provider">
+      <doc>The &amp;lt;IOHIDInterface&amp;gt; object which we have matched against.</doc>
+      <type name="IOService" qualifier="*" />
+    </argument>
+    <override name="VoodooI2CMultitouchHIDEventDriver::handleStart" ref="VoodooI2CMultitouchHIDEventDriver#VoodooI2CMultitouchHIDEventDriver::handleStart" />
+  </method>
+  <method id="VoodooI2CTouchscreenHIDEventDriver::handleStop" name="handleStop" override="yes" virtual="yes" abstract="yes">
+    <brief> Called during the stop routine to terminate the HID Event Driver</brief>
+    <doc>This function is reponsible for releasing the resources allocated in <ref ref="VoodooI2CMultitouchHIDEventDriver#VoodooI2CMultitouchHIDEventDriver::start">VoodooI2CMultitouchHIDEventDriver::start</ref>
+</doc>
+    <return>
+      <type name="void" builtin="yes" />
+    </return>
+    <argument name="provider" id="VoodooI2CTouchscreenHIDEventDriver::handleStop::provider">
+      <doc>The &amp;lt;IOHIDInterface&amp;gt; object which we have matched against.</doc>
+      <type name="IOService" qualifier="*" />
+    </argument>
+    <override name="VoodooI2CMultitouchHIDEventDriver::handleStop" ref="VoodooI2CMultitouchHIDEventDriver#VoodooI2CMultitouchHIDEventDriver::handleStop" />
+  </method>
+  <constructor id="VoodooI2CTouchscreenHIDEventDriver::VoodooI2CTouchscreenHIDEventDriver" name="VoodooI2CTouchscreenHIDEventDriver" access="protected" abstract="yes">
+    <argument name="" id="VoodooI2CTouchscreenHIDEventDriver::VoodooI2CTouchscreenHIDEventDriver::">
+      <type name="OSMetaClass" qualifier=" const *" />
+    </argument>
+  </constructor>
+  <destructor id="VoodooI2CTouchscreenHIDEventDriver::~VoodooI2CTouchscreenHIDEventDriver" name="~VoodooI2CTouchscreenHIDEventDriver" access="protected" virtual="yes" abstract="yes" />
+  <method id="VoodooI2CTouchscreenHIDEventDriver::checkStylus" name="checkStylus" access="protected" abstract="yes">
+    <brief> The transducer is checked for stylus operation and pointer event dispatched.  x,y,z &amp; pressure information is</brief>
+    <doc>obtained in a logical format and converted to IOFixed variables.
+
+</doc>
+    <return>
+      <type name="bool" builtin="yes" />
+    </return>
+    <argument name="timestamp" id="VoodooI2CTouchscreenHIDEventDriver::checkStylus::timestamp">
+      <type name="AbsoluteTime" />
+    </argument>
+    <argument name="event" id="VoodooI2CTouchscreenHIDEventDriver::checkStylus::event">
+      <type name="VoodooI2CMultitouchEvent" ref="VoodooI2CMultitouchEvent#VoodooI2CMultitouchEvent" />
+    </argument>
+  </method>
+</class>

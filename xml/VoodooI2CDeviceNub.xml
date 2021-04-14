@@ -1,0 +1,276 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<class id="VoodooI2CDeviceNub" name="VoodooI2CDeviceNub" abstract="true" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief> Implements a device nub to which an instance of a device driver may attach. Examples include <ref ref="VoodooI2CHIDDevice#VoodooI2CHIDDevice">VoodooI2CHIDDevice</ref>
+  </brief>
+  <doc>The members of this class are responsible for low-level interfacing with an I2C slave device. The public
+member functions that are not inherited from &amp;lt;IOService&amp;gt; collectively form the so-called 'device API'.
+Device drivers access the API in order to perform low-level hardware operations such as receiving interrupts
+and I2C protocol messaging.
+</doc>
+  <base access="public">
+    <type name="IOService" />
+  </base>
+  <variable id="VoodooI2CDeviceNub::gMetaClass" name="gMetaClass">
+    <type name="MetaClass" ref="VoodooI2CDeviceNub::MetaClass#VoodooI2CDeviceNub::MetaClass" />
+  </variable>
+  <variable id="VoodooI2CDeviceNub::metaClass" name="metaClass">
+    <type name="OSMetaClass" qualifier=" const const *" />
+  </variable>
+  <class ref="VoodooI2CDeviceNub::MetaClass#VoodooI2CDeviceNub::MetaClass" name="MetaClass" />
+  <constructor id="VoodooI2CDeviceNub::VoodooI2CDeviceNub" name="VoodooI2CDeviceNub" abstract="yes" />
+  <method id="VoodooI2CDeviceNub::attach" name="attach" abstract="yes">
+    <brief> Attaches <ref ref="VoodooI2CController#VoodooI2CController">VoodooI2CController</ref> class</brief>
+    <doc>This function is called by <ref ref="VoodooI2CControllerDriver#VoodooI2CControllerDriver">VoodooI2CControllerDriver</ref> in order for the nub to attach itself
+and perform its initialisation routine.
+
+</doc>
+    <return>
+      <doc>*true* if the successfully attached and initialised, *false* otherwise</doc>
+      <type name="bool" builtin="yes" />
+    </return>
+    <argument name="provider" id="VoodooI2CDeviceNub::attach::provider">
+      <doc>The controller driving the slave device</doc>
+      <type name="IOService" qualifier="*" />
+    </argument>
+    <argument name="child" id="VoodooI2CDeviceNub::attach::child">
+      <doc>The physical ACPI slave device</doc>
+      <type name="IOService" qualifier="*" />
+    </argument>
+  </method>
+  <method id="VoodooI2CDeviceNub::disableInterrupt" name="disableInterrupt" virtual="yes" abstract="yes">
+    <brief> Disables an interrupt source</brief>
+    <doc>This function disables the interrupt source via the GPIO controller or passing it onto the APCI device
+depending on the configuration
+
+</doc>
+    <return>
+      <doc>*kIOReturnSuccess* if the interrupt is sucessfully disabled, *kIOReturnNoInterrupt* if the interrupt source
+is invalid</doc>
+      <type name="IOReturn" />
+    </return>
+    <argument name="source" id="VoodooI2CDeviceNub::disableInterrupt::source">
+      <doc>The index of the interrupt source in the case of APIC interrupts</doc>
+      <type name="int" builtin="yes" />
+    </argument>
+  </method>
+  <method id="VoodooI2CDeviceNub::enableInterrupt" name="enableInterrupt" virtual="yes" abstract="yes">
+    <brief> Enables an interrupt source</brief>
+    <doc>This function enables the interrupt source via the GPIO controller or passing it onto the APCI device
+depending on the configuration
+
+</doc>
+    <return>
+      <doc>*kIOReturnSuccess* if the interrupt is sucessfully enabled, *kIOReturnNoInterrupt* if the interrupt source
+is invalid</doc>
+      <type name="IOReturn" />
+    </return>
+    <argument name="source" id="VoodooI2CDeviceNub::enableInterrupt::source">
+      <doc>The index of the interrupt source in the case of APIC interrupts</doc>
+      <type name="int" builtin="yes" />
+    </argument>
+  </method>
+  <method id="VoodooI2CDeviceNub::evaluateDSM" name="evaluateDSM" abstract="yes">
+    <brief> Evaluate _DSM for specific GUID and function index. Assume Revision ID is 1 for now.</brief>
+    <doc />
+    <return>
+      <doc>*kIOReturnSuccess* upon a successfull *_DSM*(*XDSM*) parse, otherwise failed when executing *evaluateObject*.</doc>
+      <type name="IOReturn" />
+    </return>
+    <argument name="uuid" id="VoodooI2CDeviceNub::evaluateDSM::uuid">
+      <doc>Human-readable GUID string (big-endian)</doc>
+      <type name="char" qualifier=" const *" builtin="yes" />
+    </argument>
+    <argument name="index" id="VoodooI2CDeviceNub::evaluateDSM::index">
+      <doc>Function index</doc>
+      <type name="UInt32" />
+    </argument>
+    <argument name="result" id="VoodooI2CDeviceNub::evaluateDSM::result">
+      <doc>The return is a buffer containing one bit for each function index if Function Index is zero, otherwise could be any data object (See 9.1.1 _DSM (Device Specific Method) in ACPI Specification, Version 6.3)</doc>
+      <type name="OSObject" qualifier="**" />
+    </argument>
+  </method>
+  <method id="VoodooI2CDeviceNub::getDeviceResourcesDSM" name="getDeviceResourcesDSM" abstract="yes">
+    <brief> Evaluate _DSM for availability of I2C resources like GPIO interrupts.</brief>
+    <doc />
+    <return>
+      <doc>*kIOReturnSuccess* upon a successfull *_DSM*(*XDSM*) parse, *kIOReturnNotFound* if resources were unavailable, *kIOReturnUnsupportedMode* if _DSM doesn't support desired function</doc>
+      <type name="IOReturn" />
+    </return>
+    <argument name="index" id="VoodooI2CDeviceNub::getDeviceResourcesDSM::index">
+      <doc>Function index</doc>
+      <type name="UInt32" />
+    </argument>
+    <argument name="result" id="VoodooI2CDeviceNub::getDeviceResourcesDSM::result">
+      <doc>The return could be any data object</doc>
+      <type name="OSObject" qualifier="**" />
+    </argument>
+  </method>
+  <method id="VoodooI2CDeviceNub::getInterruptType" name="getInterruptType" virtual="yes" abstract="yes">
+    <brief> Gets the type of an interrupt source</brief>
+    <doc>This function gets the interrupt type for the given interrupt source. It stores in *interruptType* either *kIOInterruptTypeEdge* for edge-trigggered sources or *kIOInterruptTypeLevel* for level-trigggered sources.
+
+</doc>
+    <return>
+      <doc>*kIOReturnSuccess* if the interrupt type is successfully found, *kIOReturnNoInterrupt* if the interrupt source
+is invalid</doc>
+      <type name="IOReturn" />
+    </return>
+    <argument name="source" id="VoodooI2CDeviceNub::getInterruptType::source">
+      <doc>The index of the interrupt source in the case of APIC interrupts</doc>
+      <type name="int" builtin="yes" />
+    </argument>
+    <argument name="interruptType" id="VoodooI2CDeviceNub::getInterruptType::interruptType">
+      <doc>The interrupt type for the interrupt source will be stored here</doc>
+      <type name="int" qualifier="*" builtin="yes" />
+    </argument>
+  </method>
+  <method id="VoodooI2CDeviceNub::getMetaClass" name="getMetaClass" virtual="yes" abstract="yes">
+    <return>
+      <type name="OSMetaClass" qualifier=" const *" />
+    </return>
+  </method>
+  <method id="VoodooI2CDeviceNub::getWorkLoop" name="getWorkLoop" virtual="yes" abstract="yes">
+    <brief> Gets an *IOWorkLoop* object</brief>
+    <doc>This function either grabs the existing workloop or creates a new one if none is found. This workloop is intended to be used by
+the nub itself along with any drivers that attach to it.
+</doc>
+    <return>
+      <doc>A pointer to an *IOWorkLoop* object, else *NULL*</doc>
+      <type name="IOWorkLoop" qualifier="*" />
+    </return>
+  </method>
+  <method id="VoodooI2CDeviceNub::readI2C" name="readI2C" abstract="yes">
+    <brief> Transmits an I2C read request to the slave device</brief>
+    <doc>This function instructs the controller to read data from an I2C slave device. WARNING: This function is not safe to call from an interrupt context.
+
+</doc>
+    <return>
+      <doc>*kIOReturnSuccess* upon a successful read, *kIOReturnBusy* if the bus is busy, *kIOReturnTimeout* if the controller driver waits too long for the controller to assert its interrupt line, *kIOReturnError* otherwise</doc>
+      <type name="IOReturn" />
+    </return>
+    <argument name="values" id="VoodooI2CDeviceNub::readI2C::values">
+      <doc>The buffer that the returned data is to be written into</doc>
+      <type name="UInt8" qualifier="*" />
+    </argument>
+    <argument name="length" id="VoodooI2CDeviceNub::readI2C::length">
+      <doc>The length of the message</doc>
+      <type name="UInt16" />
+    </argument>
+  </method>
+  <method id="VoodooI2CDeviceNub::registerInterrupt" name="registerInterrupt" virtual="yes" abstract="yes">
+    <brief> Registers a slave for interrupts</brief>
+    <doc>This function is called during the slave driver's initialisation process in order to register it for interrupts.
+
+</doc>
+    <return>
+      <doc>*kIOReturnSuccess* upon a successful registration, *kIOReturnNoInterrupt* if the interrupt source is invalid, *kIOReturnNoResources* if
+the interrupt already has an installed handler</doc>
+      <type name="IOReturn" />
+    </return>
+    <argument name="source" id="VoodooI2CDeviceNub::registerInterrupt::source">
+      <doc>The index of the interrupt source in the case of APIC interrupts</doc>
+      <type name="int" builtin="yes" />
+    </argument>
+    <argument name="target" id="VoodooI2CDeviceNub::registerInterrupt::target">
+      <doc>The slave driver</doc>
+      <type name="OSObject" qualifier="*" />
+    </argument>
+    <argument name="handler" id="VoodooI2CDeviceNub::registerInterrupt::handler">
+      <doc>The interrupt handler callback</doc>
+      <type name="IOInterruptAction" />
+    </argument>
+    <argument name="refcon" id="VoodooI2CDeviceNub::registerInterrupt::refcon">
+      <doc>A reference constant</doc>
+      <type name="void" qualifier="*" builtin="yes" />
+    </argument>
+  </method>
+  <method id="VoodooI2CDeviceNub::start" name="start" virtual="yes" abstract="yes">
+    <brief> Starts the device nub</brief>
+    <doc>This function is called by the controller to start the resources needed for the device nub.
+
+</doc>
+    <return>
+      <doc>*true* on successful start, *false* otherwise</doc>
+      <type name="bool" builtin="yes" />
+    </return>
+    <argument name="provider" id="VoodooI2CDeviceNub::start::provider">
+      <doc>The controller that drives this slave device</doc>
+      <type name="IOService" qualifier="*" />
+    </argument>
+  </method>
+  <method id="VoodooI2CDeviceNub::stop" name="stop" virtual="yes" abstract="yes">
+    <brief> Stops the device nub</brief>
+    <doc />
+    <return>
+      <type name="void" builtin="yes" />
+    </return>
+    <argument name="provider" id="VoodooI2CDeviceNub::stop::provider">
+      <doc>The controller that drives this slave device</doc>
+      <type name="IOService" qualifier="*" />
+    </argument>
+  </method>
+  <method id="VoodooI2CDeviceNub::unregisterInterrupt" name="unregisterInterrupt" virtual="yes" abstract="yes">
+    <brief> Unregisters a slave for interrupts</brief>
+    <doc>This function is called during the slave driver's exit process in order to unregister it for interrupts.
+
+</doc>
+    <return>
+      <doc>*kIOReturnSuccess* upon a successful unregistration, *kIOReturnNoInterrupt* if the interrupt source is invalid</doc>
+      <type name="IOReturn" />
+    </return>
+    <argument name="source" id="VoodooI2CDeviceNub::unregisterInterrupt::source">
+      <doc>he index of the interrupt source in the case of APIC interrupts</doc>
+      <type name="int" builtin="yes" />
+    </argument>
+  </method>
+  <method id="VoodooI2CDeviceNub::writeI2C" name="writeI2C" abstract="yes">
+    <brief> Transmits an I2C write request to the slave device</brief>
+    <doc>This function instructs the controller to write data to an I2C slave device. WARNING: This function is not safe to call from an interrupt context.
+
+</doc>
+    <return>
+      <doc>*kIOReturnSuccess* upon a successful read, *kIOReturnBusy* if the bus is busy, *kIOReturnTimeout* if the controller driver waits too long for the controller to assert its interrupt line, *kIOReturnError* otherwise</doc>
+      <type name="IOReturn" />
+    </return>
+    <argument name="values" id="VoodooI2CDeviceNub::writeI2C::values">
+      <doc>A buffer containing the message to be written</doc>
+      <type name="UInt8" qualifier="*" />
+    </argument>
+    <argument name="length" id="VoodooI2CDeviceNub::writeI2C::length">
+      <doc>The length of the message</doc>
+      <type name="UInt16" />
+    </argument>
+  </method>
+  <method id="VoodooI2CDeviceNub::writeReadI2C" name="writeReadI2C" abstract="yes">
+    <brief> Transmits an I2C write-read request to the slave device</brief>
+    <doc>This function instructs the controller to write data to an I2C slave device and then requests a read from the I2C slave device. WARNING: This function is not safe to call from an interrupt context.
+
+</doc>
+    <return>
+      <doc>*kIOReturnSuccess* upon a successful read, *kIOReturnBusy* if the bus is busy, *kIOReturnTimeout* if the controller driver waits too long for the controller to assert its interrupt line, *kIOReturnError* otherwise</doc>
+      <type name="IOReturn" />
+    </return>
+    <argument name="write_buffer" id="VoodooI2CDeviceNub::writeReadI2C::write_buffer">
+      <doc>A buffer containing the message to be written</doc>
+      <type name="UInt8" qualifier="*" />
+    </argument>
+    <argument name="write_length" id="VoodooI2CDeviceNub::writeReadI2C::write_length">
+      <doc>The length of the write message</doc>
+      <type name="UInt16" />
+    </argument>
+    <argument name="read_buffer" id="VoodooI2CDeviceNub::writeReadI2C::read_buffer">
+      <doc>The buffer that the returned data is to be written into</doc>
+      <type name="UInt8" qualifier="*" />
+    </argument>
+    <argument name="read_length" id="VoodooI2CDeviceNub::writeReadI2C::read_length">
+      <doc>The length of the read message</doc>
+      <type name="UInt16" />
+    </argument>
+  </method>
+  <constructor id="VoodooI2CDeviceNub::VoodooI2CDeviceNub" name="VoodooI2CDeviceNub" access="protected" abstract="yes">
+    <argument name="" id="VoodooI2CDeviceNub::VoodooI2CDeviceNub::">
+      <type name="OSMetaClass" qualifier=" const *" />
+    </argument>
+  </constructor>
+  <destructor id="VoodooI2CDeviceNub::~VoodooI2CDeviceNub" name="~VoodooI2CDeviceNub" access="protected" virtual="yes" abstract="yes" />
+</class>

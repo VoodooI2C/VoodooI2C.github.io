@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<class id="VoodooI2CELANTouchpadDriver" name="VoodooI2CELANTouchpadDriver" interface="true" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>Main class that handles all communication between macOS, VoodooI2C, and a I2C based ELAN touchpad</brief>
+  <doc />
+  <base access="public">
+    <type name="IOService" />
+  </base>
+  <variable id="VoodooI2CELANTouchpadDriver::gMetaClass" name="gMetaClass">
+    <type name="MetaClass" ref="VoodooI2CELANTouchpadDriver::MetaClass#VoodooI2CELANTouchpadDriver::MetaClass" />
+  </variable>
+  <variable id="VoodooI2CELANTouchpadDriver::metaClass" name="metaClass">
+    <type name="OSMetaClass" qualifier=" const const *" />
+  </variable>
+  <class ref="VoodooI2CELANTouchpadDriver::MetaClass#VoodooI2CELANTouchpadDriver::MetaClass" name="MetaClass" />
+  <constructor id="VoodooI2CELANTouchpadDriver::VoodooI2CELANTouchpadDriver" name="VoodooI2CELANTouchpadDriver" abstract="yes" />
+  <method id="VoodooI2CELANTouchpadDriver::free" name="free" virtual="yes" abstract="yes">
+    <brief> Frees any allocated resources, called implicitly by the kernel</brief>
+    <doc>as the last stage of the driver being unloaded
+
+</doc>
+    <return>
+      <type name="void" builtin="yes" />
+    </return>
+  </method>
+  <method id="VoodooI2CELANTouchpadDriver::getMetaClass" name="getMetaClass" virtual="yes" abstract="yes">
+    <return>
+      <type name="OSMetaClass" qualifier=" const *" />
+    </return>
+  </method>
+  <method id="VoodooI2CELANTouchpadDriver::init" name="init" virtual="yes" abstract="yes">
+    <brief> Initialises the VoodooI2CELANTouchpadDriver object/instance (intended as IOKit driver ctor)</brief>
+    <doc />
+    <return>
+      <doc>true if properly initialised</doc>
+      <type name="bool" builtin="yes" />
+    </return>
+    <argument name="properties" id="VoodooI2CELANTouchpadDriver::init::properties">
+      <type name="OSDictionary" qualifier="*" />
+    </argument>
+  </method>
+  <method id="VoodooI2CELANTouchpadDriver::probe" name="probe" virtual="yes" abstract="yes">
+    <brief> Checks if an ELAN device exists on the current system</brief>
+    <doc />
+    <return>
+      <doc>returns an instance of the current VoodooI2CELANTouchpadDriver if there is a matched ELAN device, NULL otherwise</doc>
+      <type name="VoodooI2CELANTouchpadDriver" qualifier="*" ref="VoodooI2CELANTouchpadDriver#VoodooI2CELANTouchpadDriver" />
+    </return>
+    <argument name="provider" id="VoodooI2CELANTouchpadDriver::probe::provider">
+      <type name="IOService" qualifier="*" />
+    </argument>
+    <argument name="score" id="VoodooI2CELANTouchpadDriver::probe::score">
+      <type name="SInt32" qualifier="*" />
+    </argument>
+  </method>
+  <method id="VoodooI2CELANTouchpadDriver::start" name="start" virtual="yes" abstract="yes">
+    <brief> Starts the driver and initialises the ELAN device</brief>
+    <doc />
+    <return>
+      <doc>returns true if the driver has started</doc>
+      <type name="bool" builtin="yes" />
+    </return>
+    <argument name="provider" id="VoodooI2CELANTouchpadDriver::start::provider">
+      <type name="IOService" qualifier="*" />
+    </argument>
+  </method>
+  <method id="VoodooI2CELANTouchpadDriver::stop" name="stop" virtual="yes" abstract="yes">
+    <brief> Stops the driver and frees any allocated resource</brief>
+    <doc />
+    <return>
+      <type name="void" builtin="yes" />
+    </return>
+    <argument name="device" id="VoodooI2CELANTouchpadDriver::stop::device">
+      <type name="IOService" qualifier="*" />
+    </argument>
+  </method>
+  <field id="VoodooI2CELANTouchpadDriver::api" name="api" access="protected">
+    <type name="VoodooI2CDeviceNub" qualifier="*" ref="VoodooI2CDeviceNub#VoodooI2CDeviceNub" />
+  </field>
+  <field id="VoodooI2CELANTouchpadDriver::acpi_device" name="acpi_device" access="protected">
+    <type name="IOACPIPlatformDevice" qualifier="*" />
+  </field>
+  <constructor id="VoodooI2CELANTouchpadDriver::VoodooI2CELANTouchpadDriver" name="VoodooI2CELANTouchpadDriver" access="protected" abstract="yes">
+    <argument name="" id="VoodooI2CELANTouchpadDriver::VoodooI2CELANTouchpadDriver::">
+      <type name="OSMetaClass" qualifier=" const *" />
+    </argument>
+  </constructor>
+  <destructor id="VoodooI2CELANTouchpadDriver::~VoodooI2CELANTouchpadDriver" name="~VoodooI2CELANTouchpadDriver" access="protected" virtual="yes" abstract="yes" />
+  <method id="VoodooI2CELANTouchpadDriver::setPowerState" name="setPowerState" access="protected" virtual="yes" abstract="yes">
+    <return>
+      <type name="IOReturn" />
+    </return>
+    <argument name="longpowerStateOrdinal" id="VoodooI2CELANTouchpadDriver::setPowerState::longpowerStateOrdinal">
+      <type name="unsigned long" builtin="yes" />
+    </argument>
+    <argument name="whatDevice" id="VoodooI2CELANTouchpadDriver::setPowerState::whatDevice">
+      <type name="IOService" qualifier="*" />
+    </argument>
+  </method>
+</class>

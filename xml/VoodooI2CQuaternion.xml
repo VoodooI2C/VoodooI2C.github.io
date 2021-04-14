@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<struct id="VoodooI2CQuaternion" name="VoodooI2CQuaternion" typedef="yes" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <field id="VoodooI2CQuaternion::x" name="x">
+    <type name="SInt16" />
+  </field>
+  <field id="VoodooI2CQuaternion::y" name="y">
+    <type name="SInt16" />
+  </field>
+  <field id="VoodooI2CQuaternion::z" name="z">
+    <type name="SInt16" />
+  </field>
+  <field id="VoodooI2CQuaternion::w" name="w">
+    <type name="SInt16" />
+  </field>
+</struct>

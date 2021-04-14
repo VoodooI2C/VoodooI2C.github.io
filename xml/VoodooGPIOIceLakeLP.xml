@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<class id="VoodooGPIOIceLakeLP" name="VoodooGPIOIceLakeLP" interface="true" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <base access="public">
+    <type name="VoodooGPIO" ref="VoodooGPIO#VoodooGPIO" />
+  </base>
+  <variable id="VoodooGPIOIceLakeLP::gMetaClass" name="gMetaClass">
+    <type name="MetaClass" ref="VoodooGPIOIceLakeLP::MetaClass#VoodooGPIOIceLakeLP::MetaClass" />
+  </variable>
+  <variable id="VoodooGPIOIceLakeLP::metaClass" name="metaClass">
+    <type name="OSMetaClass" qualifier=" const const *" />
+  </variable>
+  <class ref="VoodooGPIOIceLakeLP::MetaClass#VoodooGPIOIceLakeLP::MetaClass" name="MetaClass" />
+  <constructor id="VoodooGPIOIceLakeLP::VoodooGPIOIceLakeLP" name="VoodooGPIOIceLakeLP" abstract="yes" />
+  <method id="VoodooGPIOIceLakeLP::getMetaClass" name="getMetaClass" override="yes" virtual="yes" abstract="yes">
+    <return>
+      <type name="OSMetaClass" qualifier=" const *" />
+    </return>
+    <override name="VoodooGPIO::getMetaClass" ref="VoodooGPIO#VoodooGPIO::getMetaClass" />
+  </method>
+  <constructor id="VoodooGPIOIceLakeLP::VoodooGPIOIceLakeLP" name="VoodooGPIOIceLakeLP" access="protected" abstract="yes">
+    <argument name="" id="VoodooGPIOIceLakeLP::VoodooGPIOIceLakeLP::">
+      <type name="OSMetaClass" qualifier=" const *" />
+    </argument>
+  </constructor>
+  <destructor id="VoodooGPIOIceLakeLP::~VoodooGPIOIceLakeLP" name="~VoodooGPIOIceLakeLP" access="protected" virtual="yes" abstract="yes" />
+  <method id="VoodooGPIOIceLakeLP::start" name="start" access="protected" override="yes" virtual="yes" abstract="yes">
+    <return>
+      <type name="bool" builtin="yes" />
+    </return>
+    <argument name="provider" id="VoodooGPIOIceLakeLP::start::provider">
+      <type name="IOService" qualifier="*" />
+    </argument>
+    <override name="VoodooGPIO::start" ref="VoodooGPIO#VoodooGPIO::start" />
+  </method>
+</class>
