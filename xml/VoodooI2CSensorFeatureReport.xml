@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<struct id="VoodooI2CSensorFeatureReport" name="VoodooI2CSensorFeatureReport" typedef="yes" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <field id="VoodooI2CSensorFeatureReport::value" name="value">
+    <type name="UInt8" />
+  </field>
+  <field id="VoodooI2CSensorFeatureReport::reserved" name="reserved">
+    <type name="UInt8" />
+  </field>
+</struct>

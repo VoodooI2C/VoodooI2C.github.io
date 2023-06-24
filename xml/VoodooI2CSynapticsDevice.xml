@@ -1,0 +1,313 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<class id="VoodooI2CSynapticsDevice" name="VoodooI2CSynapticsDevice" interface="true" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <base access="public">
+    <type name="IOService" />
+  </base>
+  <variable id="VoodooI2CSynapticsDevice::gMetaClass" name="gMetaClass">
+    <type name="MetaClass" ref="VoodooI2CSynapticsDevice::MetaClass#VoodooI2CSynapticsDevice::MetaClass" />
+  </variable>
+  <variable id="VoodooI2CSynapticsDevice::metaClass" name="metaClass">
+    <type name="OSMetaClass" qualifier=" const const *" />
+  </variable>
+  <class ref="VoodooI2CSynapticsDevice::MetaClass#VoodooI2CSynapticsDevice::MetaClass" name="MetaClass" />
+  <constructor id="VoodooI2CSynapticsDevice::VoodooI2CSynapticsDevice" name="VoodooI2CSynapticsDevice" abstract="yes" />
+  <method id="VoodooI2CSynapticsDevice::get_input" name="get_input" abstract="yes">
+    <return>
+      <type name="void" builtin="yes" />
+    </return>
+  </method>
+  <method id="VoodooI2CSynapticsDevice::getMetaClass" name="getMetaClass" virtual="yes" abstract="yes">
+    <return>
+      <type name="OSMetaClass" qualifier=" const *" />
+    </return>
+  </method>
+  <method id="VoodooI2CSynapticsDevice::init" name="init" virtual="yes" abstract="yes">
+    <return>
+      <type name="bool" builtin="yes" />
+    </return>
+    <argument name="properties" id="VoodooI2CSynapticsDevice::init::properties">
+      <type name="OSDictionary" qualifier="*" />
+    </argument>
+  </method>
+  <method id="VoodooI2CSynapticsDevice::interruptOccured" name="interruptOccured" abstract="yes">
+    <return>
+      <type name="void" builtin="yes" />
+    </return>
+    <argument name="owner" id="VoodooI2CSynapticsDevice::interruptOccured::owner">
+      <type name="OSObject" qualifier="*" />
+    </argument>
+    <argument name="src" id="VoodooI2CSynapticsDevice::interruptOccured::src">
+      <type name="IOInterruptEventSource" qualifier="*" />
+    </argument>
+    <argument name="intCount" id="VoodooI2CSynapticsDevice::interruptOccured::intCount">
+      <type name="int" builtin="yes" />
+    </argument>
+  </method>
+  <method id="VoodooI2CSynapticsDevice::probe" name="probe" virtual="yes" abstract="yes">
+    <return>
+      <type name="VoodooI2CSynapticsDevice" qualifier="*" ref="VoodooI2CSynapticsDevice#VoodooI2CSynapticsDevice" />
+    </return>
+    <argument name="provider" id="VoodooI2CSynapticsDevice::probe::provider">
+      <type name="IOService" qualifier="*" />
+    </argument>
+    <argument name="score" id="VoodooI2CSynapticsDevice::probe::score">
+      <type name="SInt32" qualifier="*" />
+    </argument>
+  </method>
+  <method id="VoodooI2CSynapticsDevice::publish_multitouch_interface" name="publish_multitouch_interface" abstract="yes">
+    <return>
+      <type name="bool" builtin="yes" />
+    </return>
+  </method>
+  <method id="VoodooI2CSynapticsDevice::releaseResources" name="releaseResources" abstract="yes">
+    <return>
+      <type name="void" builtin="yes" />
+    </return>
+  </method>
+  <method id="VoodooI2CSynapticsDevice::rmi_f11_input" name="rmi_f11_input" abstract="yes">
+    <return>
+      <type name="int" builtin="yes" />
+    </return>
+    <argument name="transducers" id="VoodooI2CSynapticsDevice::rmi_f11_input::transducers">
+      <type name="OSArray" qualifier="*" />
+    </argument>
+    <argument name="timestamp" id="VoodooI2CSynapticsDevice::rmi_f11_input::timestamp">
+      <type name="AbsoluteTime" />
+    </argument>
+    <argument name="rmiInput" id="VoodooI2CSynapticsDevice::rmi_f11_input::rmiInput">
+      <type name="uint8_t" qualifier="*" />
+    </argument>
+  </method>
+  <method id="VoodooI2CSynapticsDevice::rmi_f11_process_touch" name="rmi_f11_process_touch" abstract="yes">
+    <return>
+      <type name="void" builtin="yes" />
+    </return>
+    <argument name="transducers" id="VoodooI2CSynapticsDevice::rmi_f11_process_touch::transducers">
+      <type name="OSArray" qualifier="*" />
+    </argument>
+    <argument name="transducer_id" id="VoodooI2CSynapticsDevice::rmi_f11_process_touch::transducer_id">
+      <type name="int" builtin="yes" />
+    </argument>
+    <argument name="timestamp" id="VoodooI2CSynapticsDevice::rmi_f11_process_touch::timestamp">
+      <type name="AbsoluteTime" />
+    </argument>
+    <argument name="finger_state" id="VoodooI2CSynapticsDevice::rmi_f11_process_touch::finger_state">
+      <type name="uint8_t" />
+    </argument>
+    <argument name="touch_data" id="VoodooI2CSynapticsDevice::rmi_f11_process_touch::touch_data">
+      <type name="uint8_t" qualifier="*" />
+    </argument>
+  </method>
+  <method id="VoodooI2CSynapticsDevice::rmi_f30_input" name="rmi_f30_input" abstract="yes">
+    <return>
+      <type name="int" builtin="yes" />
+    </return>
+    <argument name="transducers" id="VoodooI2CSynapticsDevice::rmi_f30_input::transducers">
+      <type name="OSArray" qualifier="*" />
+    </argument>
+    <argument name="timestamp" id="VoodooI2CSynapticsDevice::rmi_f30_input::timestamp">
+      <type name="AbsoluteTime" />
+    </argument>
+    <argument name="irq" id="VoodooI2CSynapticsDevice::rmi_f30_input::irq">
+      <type name="uint8_t" />
+    </argument>
+    <argument name="rmiInput" id="VoodooI2CSynapticsDevice::rmi_f30_input::rmiInput">
+      <type name="uint8_t" qualifier="*" />
+    </argument>
+    <argument name="size" id="VoodooI2CSynapticsDevice::rmi_f30_input::size">
+      <type name="int" builtin="yes" />
+    </argument>
+  </method>
+  <method id="VoodooI2CSynapticsDevice::rmi_populate" name="rmi_populate" abstract="yes">
+    <return>
+      <type name="int" builtin="yes" />
+    </return>
+  </method>
+  <method id="VoodooI2CSynapticsDevice::rmi_populate_f01" name="rmi_populate_f01" abstract="yes">
+    <return>
+      <type name="int" builtin="yes" />
+    </return>
+  </method>
+  <method id="VoodooI2CSynapticsDevice::rmi_populate_f11" name="rmi_populate_f11" abstract="yes">
+    <return>
+      <type name="int" builtin="yes" />
+    </return>
+  </method>
+  <method id="VoodooI2CSynapticsDevice::rmi_populate_f12" name="rmi_populate_f12" abstract="yes">
+    <return>
+      <type name="int" builtin="yes" />
+    </return>
+  </method>
+  <method id="VoodooI2CSynapticsDevice::rmi_populate_f30" name="rmi_populate_f30" abstract="yes">
+    <return>
+      <type name="int" builtin="yes" />
+    </return>
+  </method>
+  <method id="VoodooI2CSynapticsDevice::rmi_read" name="rmi_read" abstract="yes">
+    <return>
+      <type name="int" builtin="yes" />
+    </return>
+    <argument name="addr" id="VoodooI2CSynapticsDevice::rmi_read::addr">
+      <type name="uint16_t" />
+    </argument>
+    <argument name="buf" id="VoodooI2CSynapticsDevice::rmi_read::buf">
+      <type name="uint8_t" qualifier="*" />
+    </argument>
+  </method>
+  <method id="VoodooI2CSynapticsDevice::rmi_read_block" name="rmi_read_block" abstract="yes">
+    <return>
+      <type name="int" builtin="yes" />
+    </return>
+    <argument name="addr" id="VoodooI2CSynapticsDevice::rmi_read_block::addr">
+      <type name="uint16_t" />
+    </argument>
+    <argument name="buf" id="VoodooI2CSynapticsDevice::rmi_read_block::buf">
+      <type name="uint8_t" qualifier="*" />
+    </argument>
+    <argument name="len" id="VoodooI2CSynapticsDevice::rmi_read_block::len">
+      <type name="int" qualifier=" const" builtin="yes" />
+    </argument>
+  </method>
+  <method id="VoodooI2CSynapticsDevice::rmi_register_function" name="rmi_register_function" abstract="yes">
+    <return>
+      <type name="void" builtin="yes" />
+    </return>
+    <argument name="pdt_entry" id="VoodooI2CSynapticsDevice::rmi_register_function::pdt_entry">
+      <type name="pdt_entry" qualifier="*" ref="pdt_entry#pdt_entry" />
+    </argument>
+    <argument name="page" id="VoodooI2CSynapticsDevice::rmi_register_function::page">
+      <type name="int" builtin="yes" />
+    </argument>
+    <argument name="interrupt_count" id="VoodooI2CSynapticsDevice::rmi_register_function::interrupt_count">
+      <type name="unsigned int" builtin="yes" />
+    </argument>
+  </method>
+  <method id="VoodooI2CSynapticsDevice::rmi_scan_pdt" name="rmi_scan_pdt" abstract="yes">
+    <return>
+      <type name="int" builtin="yes" />
+    </return>
+  </method>
+  <method id="VoodooI2CSynapticsDevice::rmi_set_mode" name="rmi_set_mode" abstract="yes">
+    <return>
+      <type name="int" builtin="yes" />
+    </return>
+    <argument name="mode" id="VoodooI2CSynapticsDevice::rmi_set_mode::mode">
+      <type name="uint8_t" />
+    </argument>
+  </method>
+  <method id="VoodooI2CSynapticsDevice::rmi_set_page" name="rmi_set_page" abstract="yes">
+    <return>
+      <type name="int" builtin="yes" />
+    </return>
+    <argument name="_page" id="VoodooI2CSynapticsDevice::rmi_set_page::_page">
+      <type name="uint8_t" />
+    </argument>
+  </method>
+  <method id="VoodooI2CSynapticsDevice::rmi_write" name="rmi_write" abstract="yes">
+    <return>
+      <type name="int" builtin="yes" />
+    </return>
+    <argument name="addr" id="VoodooI2CSynapticsDevice::rmi_write::addr">
+      <type name="uint16_t" />
+    </argument>
+    <argument name="buf" id="VoodooI2CSynapticsDevice::rmi_write::buf">
+      <type name="uint8_t" qualifier="*" />
+    </argument>
+  </method>
+  <method id="VoodooI2CSynapticsDevice::rmi_write_block" name="rmi_write_block" abstract="yes">
+    <return>
+      <type name="int" builtin="yes" />
+    </return>
+    <argument name="addr" id="VoodooI2CSynapticsDevice::rmi_write_block::addr">
+      <type name="uint16_t" />
+    </argument>
+    <argument name="buf" id="VoodooI2CSynapticsDevice::rmi_write_block::buf">
+      <type name="uint8_t" qualifier="*" />
+    </argument>
+    <argument name="len" id="VoodooI2CSynapticsDevice::rmi_write_block::len">
+      <type name="int" qualifier=" const" builtin="yes" />
+    </argument>
+  </method>
+  <method id="VoodooI2CSynapticsDevice::rmi_write_report" name="rmi_write_report" abstract="yes">
+    <return>
+      <type name="int" builtin="yes" />
+    </return>
+    <argument name="report" id="VoodooI2CSynapticsDevice::rmi_write_report::report">
+      <type name="uint8_t" qualifier="*" />
+    </argument>
+    <argument name="report_size" id="VoodooI2CSynapticsDevice::rmi_write_report::report_size">
+      <type name="size_t" />
+    </argument>
+  </method>
+  <method id="VoodooI2CSynapticsDevice::setPowerState" name="setPowerState" virtual="yes" abstract="yes">
+    <return>
+      <type name="IOReturn" />
+    </return>
+    <argument name="powerState" id="VoodooI2CSynapticsDevice::setPowerState::powerState">
+      <type name="unsigned long" builtin="yes" />
+    </argument>
+    <argument name="whatDevice" id="VoodooI2CSynapticsDevice::setPowerState::whatDevice">
+      <type name="IOService" qualifier="*" />
+    </argument>
+  </method>
+  <method id="VoodooI2CSynapticsDevice::simulateInterrupt" name="simulateInterrupt" abstract="yes">
+    <return>
+      <type name="void" builtin="yes" />
+    </return>
+    <argument name="owner" id="VoodooI2CSynapticsDevice::simulateInterrupt::owner">
+      <type name="OSObject" qualifier="*" />
+    </argument>
+    <argument name="timer" id="VoodooI2CSynapticsDevice::simulateInterrupt::timer">
+      <type name="IOTimerEventSource" qualifier="*" />
+    </argument>
+  </method>
+  <method id="VoodooI2CSynapticsDevice::start" name="start" virtual="yes" abstract="yes">
+    <return>
+      <type name="bool" builtin="yes" />
+    </return>
+    <argument name="api" id="VoodooI2CSynapticsDevice::start::api">
+      <type name="IOService" qualifier="*" />
+    </argument>
+  </method>
+  <method id="VoodooI2CSynapticsDevice::stop" name="stop" virtual="yes" abstract="yes">
+    <return>
+      <type name="void" builtin="yes" />
+    </return>
+    <argument name="device" id="VoodooI2CSynapticsDevice::stop::device">
+      <type name="IOService" qualifier="*" />
+    </argument>
+  </method>
+  <method id="VoodooI2CSynapticsDevice::TrackpadRawInput" name="TrackpadRawInput" abstract="yes">
+    <return>
+      <type name="void" builtin="yes" />
+    </return>
+    <argument name="report" id="VoodooI2CSynapticsDevice::TrackpadRawInput::report">
+      <type size="40" class="array">
+        <type name="uint8_t" />
+      </type>
+    </argument>
+  </method>
+  <method id="VoodooI2CSynapticsDevice::unpublish_multitouch_interface" name="unpublish_multitouch_interface" abstract="yes">
+    <return>
+      <type name="void" builtin="yes" />
+    </return>
+  </method>
+  <field id="VoodooI2CSynapticsDevice::awake" name="awake" access="protected">
+    <type name="bool" builtin="yes" />
+  </field>
+  <field id="VoodooI2CSynapticsDevice::name" name="name" access="protected">
+    <type name="char" qualifier=" const *" builtin="yes" />
+  </field>
+  <field id="VoodooI2CSynapticsDevice::work_loop" name="work_loop" access="protected">
+    <type name="IOWorkLoop" qualifier="*" />
+  </field>
+  <field id="VoodooI2CSynapticsDevice::reading" name="reading" access="protected">
+    <type name="bool" builtin="yes" />
+  </field>
+  <constructor id="VoodooI2CSynapticsDevice::VoodooI2CSynapticsDevice" name="VoodooI2CSynapticsDevice" access="protected" abstract="yes">
+    <argument name="" id="VoodooI2CSynapticsDevice::VoodooI2CSynapticsDevice::">
+      <type name="OSMetaClass" qualifier=" const *" />
+    </argument>
+  </constructor>
+  <destructor id="VoodooI2CSynapticsDevice::~VoodooI2CSynapticsDevice" name="~VoodooI2CSynapticsDevice" access="protected" virtual="yes" abstract="yes" />
+</class>

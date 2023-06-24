@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<class id="VoodooI2CPCILakeController" name="VoodooI2CPCILakeController" interface="true" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief> Override power management for Comet Lake and newer platforms</brief>
+  <doc>The members of this class are responsible for low-level interfacing with the physical PCI hardware.
+</doc>
+  <base access="public">
+    <type name="VoodooI2CPCIController" ref="VoodooI2CPCIController#VoodooI2CPCIController" />
+    <brief> Implements a PCI Intel LPSS Synopsys DesignWare I2C Controller</brief>
+  </base>
+  <variable id="VoodooI2CPCILakeController::gMetaClass" name="gMetaClass">
+    <type name="MetaClass" ref="VoodooI2CPCILakeController::MetaClass#VoodooI2CPCILakeController::MetaClass" />
+  </variable>
+  <variable id="VoodooI2CPCILakeController::metaClass" name="metaClass">
+    <type name="OSMetaClass" qualifier=" const const *" />
+  </variable>
+  <class ref="VoodooI2CPCILakeController::MetaClass#VoodooI2CPCILakeController::MetaClass" name="MetaClass" />
+  <constructor id="VoodooI2CPCILakeController::VoodooI2CPCILakeController" name="VoodooI2CPCILakeController" abstract="yes" />
+  <method id="VoodooI2CPCILakeController::getMetaClass" name="getMetaClass" override="yes" virtual="yes" abstract="yes">
+    <return>
+      <type name="OSMetaClass" qualifier=" const *" />
+    </return>
+    <override name="VoodooI2CPCIController::getMetaClass" ref="VoodooI2CPCIController#VoodooI2CPCIController::getMetaClass" />
+  </method>
+  <constructor id="VoodooI2CPCILakeController::VoodooI2CPCILakeController" name="VoodooI2CPCILakeController" access="protected" abstract="yes">
+    <argument name="" id="VoodooI2CPCILakeController::VoodooI2CPCILakeController::">
+      <type name="OSMetaClass" qualifier=" const *" />
+    </argument>
+  </constructor>
+  <destructor id="VoodooI2CPCILakeController::~VoodooI2CPCILakeController" name="~VoodooI2CPCILakeController" access="protected" virtual="yes" abstract="yes" />
+</class>

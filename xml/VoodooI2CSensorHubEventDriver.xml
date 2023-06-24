@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<class id="VoodooI2CSensorHubEventDriver" name="VoodooI2CSensorHubEventDriver" interface="true" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <base access="public">
+    <type name="IOHIDEventService" />
+  </base>
+  <variable id="VoodooI2CSensorHubEventDriver::gMetaClass" name="gMetaClass">
+    <type name="MetaClass" ref="VoodooI2CSensorHubEventDriver::MetaClass#VoodooI2CSensorHubEventDriver::MetaClass" />
+  </variable>
+  <variable id="VoodooI2CSensorHubEventDriver::metaClass" name="metaClass">
+    <type name="OSMetaClass" qualifier=" const const *" />
+  </variable>
+  <class ref="VoodooI2CSensorHubEventDriver::MetaClass#VoodooI2CSensorHubEventDriver::MetaClass" name="MetaClass" />
+  <field id="VoodooI2CSensorHubEventDriver::hid_device" name="hid_device">
+    <type name="IOHIDDevice" qualifier="*" />
+  </field>
+  <field id="VoodooI2CSensorHubEventDriver::name" name="name">
+    <type name="char" qualifier=" const *" builtin="yes" />
+  </field>
+  <constructor id="VoodooI2CSensorHubEventDriver::VoodooI2CSensorHubEventDriver" name="VoodooI2CSensorHubEventDriver" abstract="yes" />
+  <method id="VoodooI2CSensorHubEventDriver::getMetaClass" name="getMetaClass" virtual="yes" abstract="yes">
+    <return>
+      <type name="OSMetaClass" qualifier=" const *" />
+    </return>
+  </method>
+  <method id="VoodooI2CSensorHubEventDriver::handleStart" name="handleStart" virtual="yes" abstract="yes">
+    <return>
+      <type name="bool" builtin="yes" />
+    </return>
+    <argument name="provider" id="VoodooI2CSensorHubEventDriver::handleStart::provider">
+      <type name="IOService" qualifier="*" />
+    </argument>
+  </method>
+  <method id="VoodooI2CSensorHubEventDriver::handleStop" name="handleStop" virtual="yes" abstract="yes">
+    <return>
+      <type name="void" builtin="yes" />
+    </return>
+    <argument name="provider" id="VoodooI2CSensorHubEventDriver::handleStop::provider">
+      <type name="IOService" qualifier="*" />
+    </argument>
+  </method>
+  <method id="VoodooI2CSensorHubEventDriver::setPowerState" name="setPowerState" virtual="yes" abstract="yes">
+    <return>
+      <type name="IOReturn" />
+    </return>
+    <argument name="whichState" id="VoodooI2CSensorHubEventDriver::setPowerState::whichState">
+      <type name="unsigned long" builtin="yes" />
+    </argument>
+    <argument name="whatDevice" id="VoodooI2CSensorHubEventDriver::setPowerState::whatDevice">
+      <type name="IOService" qualifier="*" />
+    </argument>
+  </method>
+  <method id="VoodooI2CSensorHubEventDriver::setReport" name="setReport" abstract="yes">
+    <return>
+      <type name="IOReturn" />
+    </return>
+    <argument name="report" id="VoodooI2CSensorHubEventDriver::setReport::report">
+      <type name="IOMemoryDescriptor" qualifier="*" />
+    </argument>
+    <argument name="reportType" id="VoodooI2CSensorHubEventDriver::setReport::reportType">
+      <type name="IOHIDReportType" />
+    </argument>
+    <argument name="reportID" id="VoodooI2CSensorHubEventDriver::setReport::reportID">
+      <type name="UInt32" />
+    </argument>
+  </method>
+  <method id="VoodooI2CSensorHubEventDriver::willTerminate" name="willTerminate" virtual="yes" abstract="yes">
+    <return>
+      <type name="bool" builtin="yes" />
+    </return>
+    <argument name="provider" id="VoodooI2CSensorHubEventDriver::willTerminate::provider">
+      <type name="IOService" qualifier="*" />
+    </argument>
+    <argument name="options" id="VoodooI2CSensorHubEventDriver::willTerminate::options">
+      <type name="IOOptionBits" />
+    </argument>
+  </method>
+  <constructor id="VoodooI2CSensorHubEventDriver::VoodooI2CSensorHubEventDriver" name="VoodooI2CSensorHubEventDriver" access="protected" abstract="yes">
+    <argument name="" id="VoodooI2CSensorHubEventDriver::VoodooI2CSensorHubEventDriver::">
+      <type name="OSMetaClass" qualifier=" const *" />
+    </argument>
+  </constructor>
+  <destructor id="VoodooI2CSensorHubEventDriver::~VoodooI2CSensorHubEventDriver" name="~VoodooI2CSensorHubEventDriver" access="protected" virtual="yes" abstract="yes" />
+</class>

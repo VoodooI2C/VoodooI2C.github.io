@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<struct id="intel_community_context" name="intel_community_context" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <field id="intel_community_context::intmask" name="intmask">
+    <type name="uint32_t" qualifier="*" />
+  </field>
+  <field id="intel_community_context::hostown" name="hostown">
+    <type name="uint32_t" qualifier="*" />
+  </field>
+</struct>

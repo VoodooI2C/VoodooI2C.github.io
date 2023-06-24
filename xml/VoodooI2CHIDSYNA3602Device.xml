@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<class id="VoodooI2CHIDSYNA3602Device" name="VoodooI2CHIDSYNA3602Device" interface="true" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <base access="public">
+    <type name="VoodooI2CHIDDeviceOverride" ref="VoodooI2CHIDDeviceOverride#VoodooI2CHIDDeviceOverride" />
+  </base>
+  <variable id="VoodooI2CHIDSYNA3602Device::gMetaClass" name="gMetaClass">
+    <type name="MetaClass" ref="VoodooI2CHIDSYNA3602Device::MetaClass#VoodooI2CHIDSYNA3602Device::MetaClass" />
+  </variable>
+  <variable id="VoodooI2CHIDSYNA3602Device::metaClass" name="metaClass">
+    <type name="OSMetaClass" qualifier=" const const *" />
+  </variable>
+  <class ref="VoodooI2CHIDSYNA3602Device::MetaClass#VoodooI2CHIDSYNA3602Device::MetaClass" name="MetaClass" />
+  <constructor id="VoodooI2CHIDSYNA3602Device::VoodooI2CHIDSYNA3602Device" name="VoodooI2CHIDSYNA3602Device" abstract="yes" />
+  <method id="VoodooI2CHIDSYNA3602Device::free" name="free" override="yes" virtual="yes" abstract="yes">
+    <return>
+      <type name="void" builtin="yes" />
+    </return>
+    <override name="VoodooI2CHIDDevice::free" ref="VoodooI2CHIDDevice#VoodooI2CHIDDevice::free" />
+  </method>
+  <method id="VoodooI2CHIDSYNA3602Device::getMetaClass" name="getMetaClass" override="yes" virtual="yes" abstract="yes">
+    <return>
+      <type name="OSMetaClass" qualifier=" const *" />
+    </return>
+    <override name="VoodooI2CHIDDeviceOverride::getMetaClass" ref="VoodooI2CHIDDeviceOverride#VoodooI2CHIDDeviceOverride::getMetaClass" />
+  </method>
+  <method id="VoodooI2CHIDSYNA3602Device::init" name="init" override="yes" virtual="yes" abstract="yes">
+    <return>
+      <type name="bool" builtin="yes" />
+    </return>
+    <argument name="properties" id="VoodooI2CHIDSYNA3602Device::init::properties">
+      <type name="OSDictionary" qualifier="*" />
+    </argument>
+    <override name="VoodooI2CHIDDevice::init" ref="VoodooI2CHIDDevice#VoodooI2CHIDDevice::init" />
+  </method>
+  <constructor id="VoodooI2CHIDSYNA3602Device::VoodooI2CHIDSYNA3602Device" name="VoodooI2CHIDSYNA3602Device" access="protected" abstract="yes">
+    <argument name="" id="VoodooI2CHIDSYNA3602Device::VoodooI2CHIDSYNA3602Device::">
+      <type name="OSMetaClass" qualifier=" const *" />
+    </argument>
+  </constructor>
+  <destructor id="VoodooI2CHIDSYNA3602Device::~VoodooI2CHIDSYNA3602Device" name="~VoodooI2CHIDSYNA3602Device" access="protected" virtual="yes" abstract="yes" />
+</class>

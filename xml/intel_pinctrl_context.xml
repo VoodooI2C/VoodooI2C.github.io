@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<struct id="intel_pinctrl_context" name="intel_pinctrl_context" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <field id="intel_pinctrl_context::pads" name="pads">
+    <type name="intel_pad_context" qualifier="*" ref="intel_pad_context#intel_pad_context" />
+  </field>
+  <field id="intel_pinctrl_context::communities" name="communities">
+    <type name="intel_community_context" qualifier="*" ref="intel_community_context#intel_community_context" />
+  </field>
+</struct>

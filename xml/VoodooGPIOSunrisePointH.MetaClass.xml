@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<class id="VoodooGPIOSunrisePointH::MetaClass" name="MetaClass" interface="true" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <base access="public">
+    <type name="OSMetaClass" />
+  </base>
+  <constructor id="VoodooGPIOSunrisePointH::MetaClass::MetaClass" name="MetaClass" abstract="yes" />
+  <method id="VoodooGPIOSunrisePointH::MetaClass::alloc" name="alloc" virtual="yes" abstract="yes">
+    <return>
+      <type name="OSObject" qualifier="*" />
+    </return>
+  </method>
+</class>

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<struct id="intel_pad_context" name="intel_pad_context" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <field id="intel_pad_context::padcfg0" name="padcfg0">
+    <type name="uint32_t" />
+  </field>
+  <field id="intel_pad_context::padcfg1" name="padcfg1">
+    <type name="uint32_t" />
+  </field>
+  <field id="intel_pad_context::padcfg2" name="padcfg2">
+    <type name="uint32_t" />
+  </field>
+</struct>

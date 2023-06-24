@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<class id="VoodooI2CHIDDeviceOverride" name="VoodooI2CHIDDeviceOverride" interface="true" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <base access="public">
+    <type name="VoodooI2CHIDDevice" ref="VoodooI2CHIDDevice#VoodooI2CHIDDevice" />
+    <brief> Implements an I2C-HID device as specified by Microsoft's protocol in the following document: http://download.microsoft.com/download/7/D/D/7DD44BB7-2A7A-4505-AC1C-7227D3D96D5B/hid-over-i2c-protocol-spec-v1-0.docx</brief>
+  </base>
+  <subclass access="public" ref="VoodooI2CHIDSYNA3602Device#VoodooI2CHIDSYNA3602Device" name="VoodooI2CHIDSYNA3602Device" />
+  <variable id="VoodooI2CHIDDeviceOverride::gMetaClass" name="gMetaClass">
+    <type name="MetaClass" ref="VoodooI2CHIDDeviceOverride::MetaClass#VoodooI2CHIDDeviceOverride::MetaClass" />
+  </variable>
+  <variable id="VoodooI2CHIDDeviceOverride::metaClass" name="metaClass">
+    <type name="OSMetaClass" qualifier=" const const *" />
+  </variable>
+  <class ref="VoodooI2CHIDDeviceOverride::MetaClass#VoodooI2CHIDDeviceOverride::MetaClass" name="MetaClass" />
+  <constructor id="VoodooI2CHIDDeviceOverride::VoodooI2CHIDDeviceOverride" name="VoodooI2CHIDDeviceOverride" abstract="yes" />
+  <method id="VoodooI2CHIDDeviceOverride::getMetaClass" name="getMetaClass" override="yes" virtual="yes" abstract="yes">
+    <return>
+      <type name="OSMetaClass" qualifier=" const *" />
+    </return>
+    <override name="VoodooI2CHIDDevice::getMetaClass" ref="VoodooI2CHIDDevice#VoodooI2CHIDDevice::getMetaClass" />
+  </method>
+  <field id="VoodooI2CHIDDeviceOverride::hid_descriptor_override" name="hid_descriptor_override" access="protected">
+    <type name="VoodooI2CHIDDeviceHIDDescriptor" ref="VoodooI2CHIDDeviceHIDDescriptor#VoodooI2CHIDDeviceHIDDescriptor" />
+  </field>
+  <field id="VoodooI2CHIDDeviceOverride::report_descriptor_override" name="report_descriptor_override" access="protected">
+    <type name="UInt8" qualifier="*" />
+  </field>
+  <constructor id="VoodooI2CHIDDeviceOverride::VoodooI2CHIDDeviceOverride" name="VoodooI2CHIDDeviceOverride" access="protected" abstract="yes">
+    <argument name="" id="VoodooI2CHIDDeviceOverride::VoodooI2CHIDDeviceOverride::">
+      <type name="OSMetaClass" qualifier=" const *" />
+    </argument>
+  </constructor>
+  <destructor id="VoodooI2CHIDDeviceOverride::~VoodooI2CHIDDeviceOverride" name="~VoodooI2CHIDDeviceOverride" access="protected" virtual="yes" abstract="yes" />
+  <method id="VoodooI2CHIDDeviceOverride::getHIDDescriptor" name="getHIDDescriptor" access="protected" override="yes" virtual="yes" abstract="yes">
+    <return>
+      <type name="IOReturn" />
+    </return>
+    <override name="VoodooI2CHIDDevice::getHIDDescriptor" ref="VoodooI2CHIDDevice#VoodooI2CHIDDevice::getHIDDescriptor" />
+  </method>
+  <method id="VoodooI2CHIDDeviceOverride::newReportDescriptor" name="newReportDescriptor" access="protected" override="yes" virtual="yes" abstract="yes">
+    <return>
+      <type name="IOReturn" />
+    </return>
+    <argument name="descriptor" id="VoodooI2CHIDDeviceOverride::newReportDescriptor::descriptor">
+      <type name="IOMemoryDescriptor" qualifier="**" />
+    </argument>
+    <override name="VoodooI2CHIDDevice::newReportDescriptor" ref="VoodooI2CHIDDevice#VoodooI2CHIDDevice::newReportDescriptor" />
+  </method>
+</class>

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<class id="VoodooI2CACPIController" name="VoodooI2CACPIController" interface="true" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief> Implements an ACPI Synopsys DesignWare I2C Controller</brief>
+  <doc>The members of this class are responsible for low-level interfacing with the physical ACPI hardware.
+</doc>
+  <base access="public">
+    <type name="VoodooI2CController" ref="VoodooI2CController#VoodooI2CController" />
+    <brief> Implements a Synopsys DesignWare I2C Controller</brief>
+  </base>
+  <variable id="VoodooI2CACPIController::gMetaClass" name="gMetaClass">
+    <type name="MetaClass" ref="VoodooI2CACPIController::MetaClass#VoodooI2CACPIController::MetaClass" />
+  </variable>
+  <variable id="VoodooI2CACPIController::metaClass" name="metaClass">
+    <type name="OSMetaClass" qualifier=" const const *" />
+  </variable>
+  <class ref="VoodooI2CACPIController::MetaClass#VoodooI2CACPIController::MetaClass" name="MetaClass" />
+  <constructor id="VoodooI2CACPIController::VoodooI2CACPIController" name="VoodooI2CACPIController" abstract="yes" />
+  <method id="VoodooI2CACPIController::getMetaClass" name="getMetaClass" override="yes" virtual="yes" abstract="yes">
+    <return>
+      <type name="OSMetaClass" qualifier=" const *" />
+    </return>
+    <override name="VoodooI2CController::getMetaClass" ref="VoodooI2CController#VoodooI2CController::getMetaClass" />
+  </method>
+  <constructor id="VoodooI2CACPIController::VoodooI2CACPIController" name="VoodooI2CACPIController" access="protected" abstract="yes">
+    <argument name="" id="VoodooI2CACPIController::VoodooI2CACPIController::">
+      <type name="OSMetaClass" qualifier=" const *" />
+    </argument>
+  </constructor>
+  <destructor id="VoodooI2CACPIController::~VoodooI2CACPIController" name="~VoodooI2CACPIController" access="protected" virtual="yes" abstract="yes" />
+</class>

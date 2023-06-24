@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<struct id="i2c_hid_quirks" name="i2c_hid_quirks" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <field id="i2c_hid_quirks::idVendor" name="idVendor">
+    <type name="UInt16" />
+  </field>
+  <field id="i2c_hid_quirks::idProduct" name="idProduct">
+    <type name="UInt16" />
+  </field>
+  <field id="i2c_hid_quirks::quirks" name="quirks">
+    <type name="UInt32" />
+  </field>
+</struct>

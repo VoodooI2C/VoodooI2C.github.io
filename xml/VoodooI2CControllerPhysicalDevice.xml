@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<struct id="VoodooI2CControllerPhysicalDevice" name="VoodooI2CControllerPhysicalDevice" typedef="yes" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <field id="VoodooI2CControllerPhysicalDevice::acpi_device" name="acpi_device">
+    <type name="IOACPIPlatformDevice" qualifier="*" />
+  </field>
+  <field id="VoodooI2CControllerPhysicalDevice::awake" name="awake">
+    <type name="bool" builtin="yes" />
+  </field>
+  <field id="VoodooI2CControllerPhysicalDevice::name" name="name">
+    <type name="char" qualifier=" const *" builtin="yes" />
+  </field>
+  <field id="VoodooI2CControllerPhysicalDevice::pci_device" name="pci_device">
+    <type name="IOPCIDevice" qualifier="*" />
+  </field>
+  <field id="VoodooI2CControllerPhysicalDevice::mmap" name="mmap">
+    <type name="IOMemoryMap" qualifier="*" />
+  </field>
+  <field id="VoodooI2CControllerPhysicalDevice::provider" name="provider">
+    <type name="IOService" qualifier="*" />
+  </field>
+  <field id="VoodooI2CControllerPhysicalDevice::access_intr_mask_workaround" name="access_intr_mask_workaround">
+    <type name="bool" builtin="yes" />
+  </field>
+</struct>

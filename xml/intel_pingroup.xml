@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<struct id="intel_pingroup" name="intel_pingroup" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>*</brief>
+  <doc>struct intel_pingroup - Description about group of pins
+</doc>
+  <field id="intel_pingroup::name" name="name">
+    <type name="char" qualifier="*" builtin="yes" />
+  </field>
+  <field id="intel_pingroup::pins" name="pins">
+    <type name="unsigned int" qualifier="*" builtin="yes" />
+  </field>
+  <field id="intel_pingroup::npins" name="npins">
+    <type name="size_t" />
+  </field>
+  <field id="intel_pingroup::mode" name="mode">
+    <type name="unsigned short" builtin="yes" />
+  </field>
+  <field id="intel_pingroup::modes" name="modes">
+    <type name="unsigned int" qualifier="*" builtin="yes" />
+  </field>
+</struct>

@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<struct id="intel_community" name="intel_community" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief>*</brief>
+  <doc>struct intel_community - Intel pin community description
+</doc>
+  <field id="intel_community::barno" name="barno">
+    <type name="unsigned int" builtin="yes" />
+  </field>
+  <field id="intel_community::padown_offset" name="padown_offset">
+    <type name="unsigned int" builtin="yes" />
+  </field>
+  <field id="intel_community::padcfglock_offset" name="padcfglock_offset">
+    <type name="unsigned int" builtin="yes" />
+  </field>
+  <field id="intel_community::hostown_offset" name="hostown_offset">
+    <type name="unsigned int" builtin="yes" />
+  </field>
+  <field id="intel_community::ie_offset" name="ie_offset">
+    <type name="unsigned int" builtin="yes" />
+  </field>
+  <field id="intel_community::pin_base" name="pin_base">
+    <type name="unsigned int" builtin="yes" />
+  </field>
+  <field id="intel_community::gpp_size" name="gpp_size">
+    <type name="unsigned int" builtin="yes" />
+  </field>
+  <field id="intel_community::gpp_num_padown_regs" name="gpp_num_padown_regs">
+    <type name="unsigned int" builtin="yes" />
+  </field>
+  <field id="intel_community::npins" name="npins">
+    <type name="size_t" />
+  </field>
+  <field id="intel_community::features" name="features">
+    <type name="unsigned int" builtin="yes" />
+  </field>
+  <field id="intel_community::gpps" name="gpps">
+    <type name="intel_padgroup" qualifier="*" ref="intel_padgroup#intel_padgroup" />
+  </field>
+  <field id="intel_community::ngpps" name="ngpps">
+    <type name="size_t" />
+  </field>
+  <field id="intel_community::gpps_alloc" name="gpps_alloc">
+    <type name="bool" builtin="yes" />
+  </field>
+  <field id="intel_community::isActiveCommunity" name="isActiveCommunity">
+    <type name="bool" qualifier="*" builtin="yes" />
+  </field>
+  <field id="intel_community::mmap" name="mmap">
+    <brief>Reserved for the core driver</brief>
+    <doc />
+    <type name="IOMemoryMap" qualifier="*" />
+  </field>
+  <field id="intel_community::regs" name="regs">
+    <type name="IOVirtualAddress" />
+  </field>
+  <field id="intel_community::pad_regs" name="pad_regs">
+    <type name="IOVirtualAddress" />
+  </field>
+  <field id="intel_community::interruptTypes" name="interruptTypes">
+    <type name="unsigned int" qualifier="*" builtin="yes" />
+  </field>
+  <field id="intel_community::pinInterruptActionOwners" name="pinInterruptActionOwners">
+    <type name="OSObject" qualifier="**" />
+  </field>
+  <field id="intel_community::pinInterruptAction" name="pinInterruptAction">
+    <type name="IOInterruptAction" qualifier="*" />
+  </field>
+  <field id="intel_community::pinInterruptRefcons" name="pinInterruptRefcons">
+    <type name="void" qualifier="**" builtin="yes" />
+  </field>
+</struct>

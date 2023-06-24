@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<class id="VoodooI2CNativeEngine" name="VoodooI2CNativeEngine" interface="true" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <base access="public">
+    <type name="VoodooI2CMultitouchEngine" ref="VoodooI2CMultitouchEngine#VoodooI2CMultitouchEngine" />
+    <brief>Base class that all mutltitouch engines should inherit from</brief>
+  </base>
+  <variable id="VoodooI2CNativeEngine::gMetaClass" name="gMetaClass">
+    <type name="MetaClass" ref="VoodooI2CNativeEngine::MetaClass#VoodooI2CNativeEngine::MetaClass" />
+  </variable>
+  <variable id="VoodooI2CNativeEngine::metaClass" name="metaClass">
+    <type name="OSMetaClass" qualifier=" const const *" />
+  </variable>
+  <class ref="VoodooI2CNativeEngine::MetaClass#VoodooI2CNativeEngine::MetaClass" name="MetaClass" />
+  <constructor id="VoodooI2CNativeEngine::VoodooI2CNativeEngine" name="VoodooI2CNativeEngine" abstract="yes" />
+  <method id="VoodooI2CNativeEngine::getMetaClass" name="getMetaClass" override="yes" virtual="yes" abstract="yes">
+    <return>
+      <type name="OSMetaClass" qualifier=" const *" />
+    </return>
+    <override name="VoodooI2CMultitouchEngine::getMetaClass" ref="VoodooI2CMultitouchEngine#VoodooI2CMultitouchEngine::getMetaClass" />
+  </method>
+  <method id="VoodooI2CNativeEngine::handleClose" name="handleClose" virtual="yes" abstract="yes">
+    <return>
+      <type name="void" builtin="yes" />
+    </return>
+    <argument name="forClient" id="VoodooI2CNativeEngine::handleClose::forClient">
+      <type name="IOService" qualifier="*" />
+    </argument>
+    <argument name="options" id="VoodooI2CNativeEngine::handleClose::options">
+      <type name="IOOptionBits" />
+    </argument>
+  </method>
+  <method id="VoodooI2CNativeEngine::handleInterruptReport" name="handleInterruptReport" override="yes" virtual="yes" abstract="yes">
+    <return>
+      <type name="MultitouchReturn" ref="index#MultitouchReturn" />
+    </return>
+    <argument name="event" id="VoodooI2CNativeEngine::handleInterruptReport::event">
+      <type name="VoodooI2CMultitouchEvent" ref="VoodooI2CMultitouchEvent#VoodooI2CMultitouchEvent" />
+    </argument>
+    <argument name="timestamp" id="VoodooI2CNativeEngine::handleInterruptReport::timestamp">
+      <type name="AbsoluteTime" />
+    </argument>
+    <override name="VoodooI2CMultitouchEngine::handleInterruptReport" ref="VoodooI2CMultitouchEngine#VoodooI2CMultitouchEngine::handleInterruptReport" />
+  </method>
+  <method id="VoodooI2CNativeEngine::handleIsOpen" name="handleIsOpen" virtual="yes" abstract="yes">
+    <return>
+      <type name="bool" builtin="yes" />
+    </return>
+    <argument name="forClient" id="VoodooI2CNativeEngine::handleIsOpen::forClient">
+      <type name="IOService" qualifier=" const *" />
+    </argument>
+  </method>
+  <method id="VoodooI2CNativeEngine::handleOpen" name="handleOpen" virtual="yes" abstract="yes">
+    <return>
+      <type name="bool" builtin="yes" />
+    </return>
+    <argument name="forClient" id="VoodooI2CNativeEngine::handleOpen::forClient">
+      <type name="IOService" qualifier="*" />
+    </argument>
+    <argument name="options" id="VoodooI2CNativeEngine::handleOpen::options">
+      <type name="IOOptionBits" />
+    </argument>
+    <argument name="arg" id="VoodooI2CNativeEngine::handleOpen::arg">
+      <type name="void" qualifier="*" builtin="yes" />
+    </argument>
+  </method>
+  <method id="VoodooI2CNativeEngine::onPropertyChange" name="onPropertyChange" override="yes" virtual="yes" abstract="yes">
+    <return>
+      <type name="void" builtin="yes" />
+    </return>
+    <override name="VoodooI2CMultitouchEngine::onPropertyChange" ref="VoodooI2CMultitouchEngine#VoodooI2CMultitouchEngine::onPropertyChange" />
+  </method>
+  <method id="VoodooI2CNativeEngine::start" name="start" override="yes" virtual="yes" abstract="yes">
+    <return>
+      <type name="bool" builtin="yes" />
+    </return>
+    <argument name="provider" id="VoodooI2CNativeEngine::start::provider">
+      <type name="IOService" qualifier="*" />
+    </argument>
+    <override name="VoodooI2CMultitouchEngine::start" ref="VoodooI2CMultitouchEngine#VoodooI2CMultitouchEngine::start" />
+  </method>
+  <method id="VoodooI2CNativeEngine::stop" name="stop" virtual="yes" abstract="yes">
+    <return>
+      <type name="void" builtin="yes" />
+    </return>
+    <argument name="provider" id="VoodooI2CNativeEngine::stop::provider">
+      <type name="IOService" qualifier="*" />
+    </argument>
+  </method>
+  <method id="VoodooI2CNativeEngine::willTerminate" name="willTerminate" override="yes" virtual="yes" abstract="yes">
+    <return>
+      <type name="bool" builtin="yes" />
+    </return>
+    <argument name="provider" id="VoodooI2CNativeEngine::willTerminate::provider">
+      <type name="IOService" qualifier="*" />
+    </argument>
+    <argument name="options" id="VoodooI2CNativeEngine::willTerminate::options">
+      <type name="IOOptionBits" />
+    </argument>
+    <override name="VoodooI2CMultitouchEngine::willTerminate" ref="VoodooI2CMultitouchEngine#VoodooI2CMultitouchEngine::willTerminate" />
+  </method>
+  <field id="VoodooI2CNativeEngine::message" name="message" access="protected">
+    <type name="VoodooInputEvent" />
+  </field>
+  <field id="VoodooI2CNativeEngine::parentProvider" name="parentProvider" access="protected">
+    <type name="VoodooI2CMultitouchInterface" qualifier="*" ref="VoodooI2CMultitouchInterface#VoodooI2CMultitouchInterface" />
+  </field>
+  <field id="VoodooI2CNativeEngine::voodooInputInstance" name="voodooInputInstance" access="protected">
+    <type name="IOService" qualifier="*" />
+  </field>
+  <field id="VoodooI2CNativeEngine::lastIsForceClickEnabled" name="lastIsForceClickEnabled" access="protected">
+    <type name="bool" builtin="yes" />
+  </field>
+  <field id="VoodooI2CNativeEngine::lastForceClickPropertyUpdateTime" name="lastForceClickPropertyUpdateTime" access="protected">
+    <type name="AbsoluteTime" />
+  </field>
+  <constructor id="VoodooI2CNativeEngine::VoodooI2CNativeEngine" name="VoodooI2CNativeEngine" access="protected" abstract="yes">
+    <argument name="" id="VoodooI2CNativeEngine::VoodooI2CNativeEngine::">
+      <type name="OSMetaClass" qualifier=" const *" />
+    </argument>
+  </constructor>
+  <destructor id="VoodooI2CNativeEngine::~VoodooI2CNativeEngine" name="~VoodooI2CNativeEngine" access="protected" virtual="yes" abstract="yes" />
+  <method id="VoodooI2CNativeEngine::isForceClickEnabled" name="isForceClickEnabled" access="protected" abstract="yes">
+    <return>
+      <type name="bool" builtin="yes" />
+    </return>
+  </method>
+</class>

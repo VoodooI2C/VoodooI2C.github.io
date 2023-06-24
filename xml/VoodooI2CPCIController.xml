@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<class id="VoodooI2CPCIController" name="VoodooI2CPCIController" interface="true" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <brief> Implements a PCI Intel LPSS Synopsys DesignWare I2C Controller</brief>
+  <doc>The members of this class are responsible for low-level interfacing with the physical PCI hardware.
+</doc>
+  <base access="public">
+    <type name="VoodooI2CController" ref="VoodooI2CController#VoodooI2CController" />
+    <brief> Implements a Synopsys DesignWare I2C Controller</brief>
+  </base>
+  <subclass access="public" ref="VoodooI2CPCILakeController#VoodooI2CPCILakeController" name="VoodooI2CPCILakeController">
+    <brief> Override power management for Comet Lake and newer platforms</brief>
+  </subclass>
+  <variable id="VoodooI2CPCIController::gMetaClass" name="gMetaClass">
+    <type name="MetaClass" ref="VoodooI2CPCIController::MetaClass#VoodooI2CPCIController::MetaClass" />
+  </variable>
+  <variable id="VoodooI2CPCIController::metaClass" name="metaClass">
+    <type name="OSMetaClass" qualifier=" const const *" />
+  </variable>
+  <class ref="VoodooI2CPCIController::MetaClass#VoodooI2CPCIController::MetaClass" name="MetaClass" />
+  <constructor id="VoodooI2CPCIController::VoodooI2CPCIController" name="VoodooI2CPCIController" abstract="yes" />
+  <method id="VoodooI2CPCIController::getMetaClass" name="getMetaClass" override="yes" virtual="yes" abstract="yes">
+    <return>
+      <type name="OSMetaClass" qualifier=" const *" />
+    </return>
+    <override name="VoodooI2CController::getMetaClass" ref="VoodooI2CController#VoodooI2CController::getMetaClass" />
+  </method>
+  <constructor id="VoodooI2CPCIController::VoodooI2CPCIController" name="VoodooI2CPCIController" access="protected" abstract="yes">
+    <argument name="" id="VoodooI2CPCIController::VoodooI2CPCIController::">
+      <type name="OSMetaClass" qualifier=" const *" />
+    </argument>
+  </constructor>
+  <destructor id="VoodooI2CPCIController::~VoodooI2CPCIController" name="~VoodooI2CPCIController" access="protected" virtual="yes" abstract="yes" />
+  <method id="VoodooI2CPCIController::configurePCI" name="configurePCI" access="protected" virtual="yes" abstract="yes">
+    <brief> Configures the PCI provider</brief>
+    <doc>This function disables PCI power management (which the controller does not support) by
+enforcing PCI power state D0. It then enables the PCI bus master and the memory banks.
+</doc>
+    <return>
+      <type name="void" builtin="yes" />
+    </return>
+  </method>
+</class>

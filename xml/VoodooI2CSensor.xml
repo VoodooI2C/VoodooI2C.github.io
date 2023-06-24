@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<class id="VoodooI2CSensor" name="VoodooI2CSensor" interface="true" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <base access="public">
+    <type name="IOService" />
+  </base>
+  <subclass access="public" ref="VoodooI2CDeviceOrientationSensor#VoodooI2CDeviceOrientationSensor" name="VoodooI2CDeviceOrientationSensor" />
+  <subclass access="public" ref="VoodooI2CAccelerometerSensor#VoodooI2CAccelerometerSensor" name="VoodooI2CAccelerometerSensor" />
+  <variable id="VoodooI2CSensor::gMetaClass" name="gMetaClass">
+    <type name="MetaClass" ref="VoodooI2CSensor::MetaClass#VoodooI2CSensor::MetaClass" />
+  </variable>
+  <variable id="VoodooI2CSensor::metaClass" name="metaClass">
+    <type name="OSMetaClass" qualifier=" const const *" />
+  </variable>
+  <class ref="VoodooI2CSensor::MetaClass#VoodooI2CSensor::MetaClass" name="MetaClass" />
+  <field id="VoodooI2CSensor::element" name="element">
+    <type name="IOHIDElement" qualifier="*" />
+  </field>
+  <constructor id="VoodooI2CSensor::VoodooI2CSensor" name="VoodooI2CSensor" abstract="yes" />
+  <method id="VoodooI2CSensor::getMetaClass" name="getMetaClass" virtual="yes" abstract="yes">
+    <return>
+      <type name="OSMetaClass" qualifier=" const *" />
+    </return>
+  </method>
+  <method id="VoodooI2CSensor::handleInterruptReport" name="handleInterruptReport" virtual="yes" abstract="yes">
+    <return>
+      <type name="void" builtin="yes" />
+    </return>
+    <argument name="timestamp" id="VoodooI2CSensor::handleInterruptReport::timestamp">
+      <type name="AbsoluteTime" />
+    </argument>
+    <argument name="report" id="VoodooI2CSensor::handleInterruptReport::report">
+      <type name="IOMemoryDescriptor" qualifier="*" />
+    </argument>
+    <argument name="report_type" id="VoodooI2CSensor::handleInterruptReport::report_type">
+      <type name="IOHIDReportType" />
+    </argument>
+    <argument name="report_id" id="VoodooI2CSensor::handleInterruptReport::report_id">
+      <type name="UInt32" />
+    </argument>
+  </method>
+  <method id="VoodooI2CSensor::setPowerState" name="setPowerState" virtual="yes" abstract="yes">
+    <return>
+      <type name="IOReturn" />
+    </return>
+    <argument name="whichState" id="VoodooI2CSensor::setPowerState::whichState">
+      <type name="unsigned long" builtin="yes" />
+    </argument>
+    <argument name="whatDevice" id="VoodooI2CSensor::setPowerState::whatDevice">
+      <type name="IOService" qualifier="*" />
+    </argument>
+  </method>
+  <method id="VoodooI2CSensor::start" name="start" virtual="yes" abstract="yes">
+    <return>
+      <type name="bool" builtin="yes" />
+    </return>
+    <argument name="provider" id="VoodooI2CSensor::start::provider">
+      <type name="IOService" qualifier="*" />
+    </argument>
+  </method>
+  <method id="VoodooI2CSensor::stop" name="stop" virtual="yes" abstract="yes">
+    <return>
+      <type name="void" builtin="yes" />
+    </return>
+    <argument name="provider" id="VoodooI2CSensor::stop::provider">
+      <type name="IOService" qualifier="*" />
+    </argument>
+  </method>
+  <method id="VoodooI2CSensor::withElement" name="withElement" static="yes" abstract="yes">
+    <return>
+      <type name="VoodooI2CSensor" qualifier="*" ref="VoodooI2CSensor#VoodooI2CSensor" />
+    </return>
+    <argument name="element" id="VoodooI2CSensor::withElement::element">
+      <type name="IOHIDElement" qualifier="*" />
+    </argument>
+    <argument name="event_driver" id="VoodooI2CSensor::withElement::event_driver">
+      <type name="IOService" qualifier="*" />
+    </argument>
+  </method>
+  <field id="VoodooI2CSensor::awake" name="awake" access="protected">
+    <type name="bool" builtin="yes" />
+  </field>
+  <field id="VoodooI2CSensor::event_driver" name="event_driver" access="protected">
+    <type name="VoodooI2CSensorHubEventDriver" qualifier="*" ref="VoodooI2CSensorHubEventDriver#VoodooI2CSensorHubEventDriver" />
+  </field>
+  <field id="VoodooI2CSensor::power_state" name="power_state" access="protected">
+    <type name="IOHIDElement" qualifier="*" />
+  </field>
+  <field id="VoodooI2CSensor::current_power_state" name="current_power_state" access="protected">
+    <type name="UInt32" />
+  </field>
+  <field id="VoodooI2CSensor::reporting_state" name="reporting_state" access="protected">
+    <type name="IOHIDElement" qualifier="*" />
+  </field>
+  <field id="VoodooI2CSensor::current_reporting_state" name="current_reporting_state" access="protected">
+    <type name="UInt32" />
+  </field>
+  <constructor id="VoodooI2CSensor::VoodooI2CSensor" name="VoodooI2CSensor" access="protected" abstract="yes">
+    <argument name="" id="VoodooI2CSensor::VoodooI2CSensor::">
+      <type name="OSMetaClass" qualifier=" const *" />
+    </argument>
+  </constructor>
+  <destructor id="VoodooI2CSensor::~VoodooI2CSensor" name="~VoodooI2CSensor" access="protected" virtual="yes" abstract="yes" />
+  <method id="VoodooI2CSensor::changeState" name="changeState" access="protected" abstract="yes">
+    <return>
+      <type name="IOReturn" />
+    </return>
+    <argument name="state_element" id="VoodooI2CSensor::changeState::state_element">
+      <type name="IOHIDElement" qualifier="*" />
+    </argument>
+    <argument name="state_usage" id="VoodooI2CSensor::changeState::state_usage">
+      <type name="UInt16" />
+    </argument>
+  </method>
+  <method id="VoodooI2CSensor::findPropertyIndex" name="findPropertyIndex" access="protected" static="yes" abstract="yes">
+    <return>
+      <type name="UInt8" />
+    </return>
+    <argument name="element" id="VoodooI2CSensor::findPropertyIndex::element">
+      <type name="IOHIDElement" qualifier="*" />
+    </argument>
+    <argument name="usage" id="VoodooI2CSensor::findPropertyIndex::usage">
+      <type name="UInt16" />
+    </argument>
+  </method>
+  <method id="VoodooI2CSensor::getElementValue" name="getElementValue" access="protected" abstract="yes">
+    <return>
+      <type name="UInt32" />
+    </return>
+    <argument name="element" id="VoodooI2CSensor::getElementValue::element">
+      <type name="IOHIDElement" qualifier="*" />
+    </argument>
+  </method>
+  <method id="VoodooI2CSensor::setElementValue" name="setElementValue" access="protected" abstract="yes">
+    <return>
+      <type name="void" builtin="yes" />
+    </return>
+    <argument name="element" id="VoodooI2CSensor::setElementValue::element">
+      <type name="IOHIDElement" qualifier="*" />
+    </argument>
+    <argument name="value" id="VoodooI2CSensor::setElementValue::value">
+      <type name="UInt32" />
+    </argument>
+  </method>
+</class>

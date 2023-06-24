@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<struct id="rmi_function" name="rmi_function" xmlns="http://jessevdk.github.com/cldoc/1.0">
+  <field id="rmi_function::page" name="page">
+    <type name="unsigned int" builtin="yes" />
+  </field>
+  <field id="rmi_function::query_base_addr" name="query_base_addr">
+    <brief>page of the function</brief>
+    <doc />
+    <type name="uint16_t" />
+  </field>
+  <field id="rmi_function::command_base_addr" name="command_base_addr">
+    <brief>base address for queries</brief>
+    <doc />
+    <type name="uint16_t" />
+  </field>
+  <field id="rmi_function::control_base_addr" name="control_base_addr">
+    <brief>base address for commands</brief>
+    <doc />
+    <type name="uint16_t" />
+  </field>
+  <field id="rmi_function::data_base_addr" name="data_base_addr">
+    <brief>base address for controls</brief>
+    <doc />
+    <type name="uint16_t" />
+  </field>
+  <field id="rmi_function::interrupt_base" name="interrupt_base">
+    <brief>base address for datas</brief>
+    <doc />
+    <type name="unsigned int" builtin="yes" />
+  </field>
+  <field id="rmi_function::interrupt_count" name="interrupt_count">
+    <brief> cross-function interrupt number</brief>
+    <doc>(uniq in the device)</doc>
+    <type name="unsigned int" builtin="yes" />
+  </field>
+  <field id="rmi_function::report_size" name="report_size">
+    <brief>number of interrupts</brief>
+    <doc />
+    <type name="unsigned int" builtin="yes" />
+  </field>
+  <field id="rmi_function::irq_mask" name="irq_mask">
+    <brief>size of a report</brief>
+    <doc />
+    <type name="unsigned long" builtin="yes" />
+  </field>
+</struct>
